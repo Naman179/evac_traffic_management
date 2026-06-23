@@ -1,30 +1,34 @@
+/**
+ * P3 — Deployment Recommendation Engine
+ * API: POST /route  → officer count, barricades, equipment, escalation, diversion, explanation
+ *      GET  /templates → response-template rule table (editable, show to commanders)
+ *
+ * Per spec: rule engine scales officer count using P1 composite impact score.
+ * Diversion route pulled from OSM (via OSMnx + NetworkX on backend).
+ * Templates table shows why a recommendation was made (transparency).
+ */
+
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import { api, type RouteRequest } from '../api/client';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { api, type RouteRequest, type ResponseTemplate } from '../api/client';
 import { Spinner } from '../components/Loading';
 import {
-  Route as RouteIcon,
-  Send,
-  Users,
-  Shield,
-  AlertTriangle,
-  Navigation,
+  Route as RouteIcon, Send, Users, Shield, AlertTriangle,
+  Navigation, ChevronDown, ChevronUp, BookOpen,
 } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import toast from 'react-hot-toast';
 import 'leaflet/dist/leaflet.css';
 
-// Fix leaflet default icon
-const DefaultIcon = L.divIcon({
+const StartIcon = L.divIcon({
   className: '',
-  html: `<div style="width:16px;height:16px;border-radius:50%;background:#00c853;border:2px solid white;box-shadow:0 0 6px rgba(46,204,113,0.5)"></div>`,
+  html: `<div style="width:16px;height:16px;border-radius:50%;background:#2ecc71;border:2px solid white;box-shadow:0 0 8px rgba(46,204,113,0.7)"></div>`,
   iconSize: [16, 16],
 });
-
 const EndIcon = L.divIcon({
   className: '',
-  html: `<div style="width:16px;height:16px;border-radius:50%;background:#ef4444;border:2px solid white;box-shadow:0 0 6px rgba(239,68,68,0.5)"></div>`,
+  html: `<div style="width:16px;height:16px;border-radius:50%;background:#ef4444;border:2px solid white;box-shadow:0 0 8px rgba(239,68,68,0.7)"></div>`,
   iconSize: [16, 16],
 });
 
@@ -33,6 +37,19 @@ const CAUSES = [
   'water_logging', 'tree_fall', 'congestion', 'public_event',
   'procession', 'vip_movement', 'protest', 'debris',
 ];
+
+const CORRIDORS = [
+  'Mysore Road', 'Bellary Road 1', 'Bellary Road 2', 'Hosur Road',
+  'Tumkur Road', 'ORR North 1', 'ORR North 2', 'ORR East 1', 'ORR East 2',
+  'Old Madras Road', 'Magadi Road', 'Bannerghatta Road', 'Hennur Main Road',
+  'Varthur Road', 'Old Airport Road', 'CBD 1', 'CBD 2',
+];
+
+const card = {
+  background: '#111417',
+  border: '1px solid rgba(255,255,255,0.06)',
+  borderRadius: '16px',
+};
 
 export default function RoutePage() {
   const [form, setForm] = useState<RouteRequest>({
@@ -47,10 +64,18 @@ export default function RoutePage() {
     requires_road_closure: true,
   });
 
+  const [showTemplates, setShowTemplates] = useState(false);
+
   const mutation = useMutation({
     mutationFn: (data: RouteRequest) => api.getRoute(data),
     onError: (err: Error) => toast.error(err.message),
-    onSuccess: (data) => toast.success(`Recommendation: ${data.recommended_officers} officers, ${data.recommended_barricades} barricades`),
+    onSuccess: data => toast.success(`Recommended: ${data.recommended_officers} officers · ${data.recommended_barricades} barricades`),
+  });
+
+  const templates = useQuery<ResponseTemplate[]>({
+    queryKey: ['templates'],
+    queryFn: () => api.getTemplates(),
+    enabled: showTemplates,
   });
 
   const result = mutation.data;
@@ -58,24 +83,36 @@ export default function RoutePage() {
     (result?.diversion_route as Record<string, unknown>)?.route_coords as number[][] | undefined;
 
   return (
-    <div className="space-y-6">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }} className="animate-fade-in">
+
+      {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold gradient-text flex items-center gap-2">
-          <RouteIcon size={24} /> Deployment & Routing
-        </h1>
-        <p className="text-surface-700 text-sm mt-1">
-          Generate deployment recommendations and evacuation diversion routes
-        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+          <div style={{ padding: '10px', borderRadius: '12px', background: 'rgba(96,165,250,0.1)', border: '1px solid rgba(96,165,250,0.2)' }}>
+            <RouteIcon size={20} color="#60a5fa" />
+          </div>
+          <div>
+            <h1 style={{ fontSize: '28px', fontWeight: 900, color: '#f3f4f6', letterSpacing: '-0.03em' }}>
+              Deployment Recommender
+            </h1>
+            <p style={{ fontSize: '14px', color: '#6b7280', marginTop: '2px' }}>
+              Rule engine · officer count scaled by P1 impact score · OSM diversion routing
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Form */}
-        <div className="glass-card p-6">
-          <h2 className="text-sm font-semibold text-surface-200 mb-4">
-            Incident Parameters
-          </h2>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
+
+        {/* ── Input Form ── */}
+        <div style={{ ...card, padding: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+            <div style={{ width: '3px', height: '18px', background: '#60a5fa', borderRadius: '2px' }} />
+            <span style={{ fontSize: '15px', fontWeight: 700, color: '#e5e7eb' }}>Incident Parameters</span>
+          </div>
+
           <form
-            onSubmit={(e) => {
+            onSubmit={e => {
               e.preventDefault();
               mutation.mutate({
                 ...form,
@@ -84,159 +121,132 @@ export default function RoutePage() {
                   : undefined,
               });
             }}
-            className="space-y-4"
+            style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">Cause</label>
-                <select
-                  className="input-field"
-                  value={form.event_cause}
-                  onChange={(e) => setForm({ ...form, event_cause: e.target.value })}
-                >
-                  {CAUSES.map((c) => (
-                    <option key={c} value={c}>{c.replace(/_/g, ' ')}</option>
-                  ))}
+                <label className="form-label">Incident Cause</label>
+                <select className="input-field" value={form.event_cause} onChange={e => setForm({ ...form, event_cause: e.target.value })}>
+                  {CAUSES.map(c => <option key={c} value={c}>{c.replace(/_/g, ' ')}</option>)}
                 </select>
               </div>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">Corridor</label>
-                <input
-                  className="input-field"
-                  value={form.corridor}
-                  onChange={(e) => setForm({ ...form, corridor: e.target.value })}
-                />
+                <label className="form-label">Corridor</label>
+                <select className="input-field" value={form.corridor} onChange={e => setForm({ ...form, corridor: e.target.value })}>
+                  {CORRIDORS.map(c => <option key={c} value={c}>{c}</option>)}
+                </select>
               </div>
             </div>
 
             <div>
-              <label className="text-xs text-surface-700 mb-1 block">Date & Time</label>
+              <label className="form-label">Date & Time</label>
               <input
                 type="datetime-local"
                 className="input-field"
                 value={form.start_datetime}
-                onChange={(e) => setForm({ ...form, start_datetime: e.target.value })}
+                onChange={e => setForm({ ...form, start_datetime: e.target.value })}
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">Start Lat</label>
-                <input
-                  type="number"
-                  step="0.001"
-                  className="input-field"
-                  value={form.latitude}
-                  onChange={(e) => setForm({ ...form, latitude: parseFloat(e.target.value) })}
-                />
+                <label className="form-label">Start Latitude</label>
+                <input type="number" step="0.001" className="input-field" value={form.latitude}
+                  onChange={e => setForm({ ...form, latitude: parseFloat(e.target.value) })} />
               </div>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">Start Lon</label>
-                <input
-                  type="number"
-                  step="0.001"
-                  className="input-field"
-                  value={form.longitude}
-                  onChange={(e) => setForm({ ...form, longitude: parseFloat(e.target.value) })}
-                />
+                <label className="form-label">Start Longitude</label>
+                <input type="number" step="0.001" className="input-field" value={form.longitude}
+                  onChange={e => setForm({ ...form, longitude: parseFloat(e.target.value) })} />
               </div>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">End Lat</label>
-                <input
-                  type="number"
-                  step="0.001"
-                  className="input-field"
-                  value={form.endlatitude}
-                  onChange={(e) => setForm({ ...form, endlatitude: parseFloat(e.target.value) })}
-                />
+                <label className="form-label">End Latitude</label>
+                <input type="number" step="0.001" className="input-field" value={form.endlatitude}
+                  onChange={e => setForm({ ...form, endlatitude: parseFloat(e.target.value) })} />
               </div>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">End Lon</label>
-                <input
-                  type="number"
-                  step="0.001"
-                  className="input-field"
-                  value={form.endlongitude}
-                  onChange={(e) => setForm({ ...form, endlongitude: parseFloat(e.target.value) })}
-                />
+                <label className="form-label">End Longitude</label>
+                <input type="number" step="0.001" className="input-field" value={form.endlongitude}
+                  onChange={e => setForm({ ...form, endlongitude: parseFloat(e.target.value) })} />
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
               <div>
-                <label className="text-xs text-surface-700 mb-1 block">Priority</label>
-                <select
-                  className="input-field"
-                  value={form.priority}
-                  onChange={(e) => setForm({ ...form, priority: e.target.value })}
-                >
+                <label className="form-label">Priority</label>
+                <select className="input-field" value={form.priority} onChange={e => setForm({ ...form, priority: e.target.value })}>
                   <option value="High">High</option>
                   <option value="Low">Low</option>
                 </select>
               </div>
-              <div className="flex items-end pb-1">
-                <label className="flex items-center gap-2 text-sm text-surface-700">
+              <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+                <label style={{
+                  display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer',
+                  padding: '10px 14px', borderRadius: '10px', width: '100%',
+                  border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)',
+                }}>
                   <input
                     type="checkbox"
                     checked={form.requires_road_closure}
-                    onChange={(e) => setForm({ ...form, requires_road_closure: e.target.checked })}
-                    className="w-4 h-4 accent-primary-500"
+                    onChange={e => setForm({ ...form, requires_road_closure: e.target.checked })}
+                    style={{ width: '15px', height: '15px', accentColor: '#2ecc71', cursor: 'pointer' }}
                   />
-                  Road closure needed
+                  <span style={{ fontSize: '13px', fontWeight: 500, color: '#d1d5db' }}>Road closure needed</span>
                 </label>
               </div>
             </div>
 
             <button
               type="submit"
-              className="btn-primary w-full justify-center"
+              className="btn-primary"
               disabled={mutation.isPending}
+              style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '15px' }}
             >
-              {mutation.isPending ? <Spinner size={16} /> : <Send size={16} />}
-              {mutation.isPending ? 'Computing...' : 'Generate Recommendation'}
+              {mutation.isPending ? <Spinner size={18} /> : <Send size={18} />}
+              {mutation.isPending ? 'Computing…' : 'Generate Deployment Plan'}
             </button>
           </form>
         </div>
 
-        {/* Results */}
-        <div className="space-y-4">
+        {/* ── Results ── */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {result ? (
             <>
-              {/* Summary Cards */}
-              <div className="grid grid-cols-3 gap-3 animate-fade-in">
-                <div className="glass-card p-4 text-center">
-                  <Users size={20} className="mx-auto text-primary-400" />
-                  <p className="text-2xl font-bold mt-1">{result.recommended_officers}</p>
-                  <p className="text-xs text-surface-700">Officers</p>
-                </div>
-                <div className="glass-card p-4 text-center">
-                  <Shield size={20} className="mx-auto text-warning-400" />
-                  <p className="text-2xl font-bold mt-1">{result.recommended_barricades}</p>
-                  <p className="text-xs text-surface-700">Barricades</p>
-                </div>
-                <div className="glass-card p-4 text-center">
-                  <AlertTriangle size={20} className="mx-auto text-danger-400" />
-                  <p className="text-2xl font-bold mt-1">{result.impact_score}/10</p>
-                  <p className="text-xs text-surface-700">Impact</p>
-                </div>
+              {/* 3 key numbers */}
+              <div className="animate-fade-in" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+                {[
+                  { label: 'Officers', value: result.recommended_officers, icon: <Users size={20} />, color: '#2ecc71' },
+                  { label: 'Barricades', value: result.recommended_barricades, icon: <Shield size={20} />, color: '#f59e0b' },
+                  { label: 'Impact', value: `${result.impact_score}/10`, icon: <AlertTriangle size={20} />, color: '#f87171' },
+                ].map(m => (
+                  <div key={m.label} style={{ ...card, padding: '20px', textAlign: 'center' }}>
+                    <div style={{ color: m.color, display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>{m.icon}</div>
+                    <div style={{ fontSize: '28px', fontWeight: 900, color: '#f3f4f6', letterSpacing: '-0.02em' }}>{m.value}</div>
+                    <div style={{ fontSize: '11px', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginTop: '4px' }}>{m.label}</div>
+                  </div>
+                ))}
               </div>
 
-              {/* Equipment & Escalation */}
-              <div className="glass-card p-4 animate-fade-in">
-                <h3 className="text-xs text-surface-700 uppercase mb-2">Equipment</h3>
-                <div className="flex flex-wrap gap-2">
+              {/* Equipment + Escalation */}
+              <div className="animate-fade-in" style={{ ...card, padding: '20px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '12px' }}>
+                  Equipment Required
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {result.equipment.map((e, i) => (
-                    <span key={i} className="px-2.5 py-1 rounded-lg text-xs bg-primary-500/10 text-primary-300 border border-primary-500/20">
+                    <span key={i} style={{ padding: '5px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 600, background: 'rgba(46,204,113,0.1)', color: '#2ecc71', border: '1px solid rgba(46,204,113,0.2)' }}>
                       {e}
                     </span>
                   ))}
                 </div>
                 {result.escalate_to.length > 0 && (
                   <>
-                    <h3 className="text-xs text-surface-700 uppercase mt-3 mb-2">Escalate To</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.07em', marginTop: '16px', marginBottom: '10px' }}>
+                      Escalate To
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {result.escalate_to.map((e, i) => (
-                        <span key={i} className="px-2.5 py-1 rounded-lg text-xs bg-danger-500/10 text-danger-300 border border-danger-500/20">
+                        <span key={i} style={{ padding: '5px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 600, background: 'rgba(239,68,68,0.1)', color: '#f87171', border: '1px solid rgba(239,68,68,0.2)' }}>
                           {e}
                         </span>
                       ))}
@@ -245,68 +255,141 @@ export default function RoutePage() {
                 )}
               </div>
 
-              {/* Explanation */}
-              <div className="glass-card p-4 animate-fade-in">
-                <h3 className="text-xs text-surface-700 uppercase mb-2">
-                  Decision Explanation
-                </h3>
-                <div className="space-y-1.5 text-xs text-surface-200">
+              {/* Rule-based explanation */}
+              <div className="animate-fade-in" style={{ ...card, padding: '20px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '12px' }}>
+                  Decision Explanation (Rule Engine)
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {result.explanation.map((ex, i) => (
-                    <div key={i} className="flex gap-2">
-                      <span className="text-primary-400 mt-0.5">→</span>
-                      <span>{ex}</span>
+                    <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                      <span style={{ color: '#2ecc71', marginTop: '1px', fontWeight: 700, fontSize: '14px' }}>→</span>
+                      <span style={{ fontSize: '13px', color: '#d1d5db', lineHeight: 1.55 }}>{ex}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-surface-700 mt-3 italic">{result.notes}</p>
+                {result.notes && (
+                  <p style={{ fontSize: '12px', color: '#4b5563', marginTop: '12px', fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px' }}>
+                    {result.notes}
+                  </p>
+                )}
               </div>
             </>
           ) : (
-            <div className="glass-card p-12 text-center text-surface-700">
-              <Navigation size={48} className="mx-auto mb-4 opacity-30" />
-              <p>Configure incident and click Generate to see recommendations</p>
+            <div style={{ ...card, padding: '64px 28px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', minHeight: '300px' }}>
+              <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(96,165,250,0.08)', border: '1px solid rgba(96,165,250,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Navigation size={28} color="#60a5fa" style={{ opacity: 0.5 }} />
+              </div>
+              <div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#6b7280', marginBottom: '8px' }}>No plan generated yet</div>
+                <div style={{ fontSize: '13px', color: '#4b5563' }}>Configure the incident and click Generate</div>
+              </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* Map with Route */}
+      {/* Map with diversion route */}
       {result && (
-        <div className="glass-card overflow-hidden animate-fade-in" style={{ height: '400px' }}>
+        <div className="animate-fade-in" style={{ ...card, overflow: 'hidden', height: '420px' }}>
           <MapContainer
             center={[form.latitude, form.longitude]}
-            zoom={14}
+            zoom={13}
             style={{ height: '100%', width: '100%' }}
-            className="rounded-2xl"
           >
             <TileLayer
               url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
               attribution="&copy; CartoDB"
             />
-            <Marker position={[form.latitude, form.longitude]} icon={DefaultIcon}>
-              <Popup>
-                <span style={{ color: '#151a1d' }}>
-                  <b>Incident Start</b><br />{form.event_cause}
-                </span>
-              </Popup>
+            <Marker position={[form.latitude, form.longitude]} icon={StartIcon}>
+              <Popup><span style={{ color: '#111', fontWeight: 700 }}>Incident Start<br/>{form.event_cause.replace(/_/g,' ')}</span></Popup>
             </Marker>
             {form.endlatitude && form.endlongitude && (
               <Marker position={[form.endlatitude, form.endlongitude]} icon={EndIcon}>
-                <Popup><span style={{ color: '#151a1d' }}>Incident End</span></Popup>
+                <Popup><span style={{ color: '#111', fontWeight: 700 }}>Incident End</span></Popup>
               </Marker>
             )}
             {routeCoords && routeCoords.length > 0 && (
               <Polyline
                 positions={routeCoords.map(([lat, lon]) => [lat, lon] as [number, number])}
-                color="#00c853"
+                color="#2ecc71"
                 weight={4}
-                opacity={0.8}
+                opacity={0.85}
                 dashArray="8 4"
               />
             )}
           </MapContainer>
         </div>
       )}
+
+      {/* Response Templates — rule table viewer (transparency feature from spec) */}
+      <div style={{ ...card, overflow: 'hidden' }}>
+        <button
+          onClick={() => setShowTemplates(v => !v)}
+          style={{
+            width: '100%', padding: '20px 24px', background: 'none', border: 'none',
+            display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer',
+          }}
+        >
+          <BookOpen size={16} color="#6b7280" />
+          <span style={{ fontSize: '14px', fontWeight: 700, color: '#9ca3af' }}>Response Rule Templates</span>
+          <span style={{ fontSize: '12px', color: '#4b5563', marginLeft: '6px' }}>
+            (underlying rules the engine uses — GET /templates)
+          </span>
+          <span style={{ marginLeft: 'auto', color: '#6b7280' }}>
+            {showTemplates ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          </span>
+        </button>
+
+        {showTemplates && (
+          <div style={{ padding: '0 24px 24px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+            {templates.isLoading ? (
+              <div style={{ paddingTop: '16px' }}>
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className="skeleton" style={{ height: '48px', width: '100%', marginBottom: '8px' }} />
+                ))}
+              </div>
+            ) : templates.data && templates.data.length > 0 ? (
+              <div style={{ overflowX: 'auto', paddingTop: '16px' }}>
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Cause</th>
+                      <th>Base Officers</th>
+                      <th>Recovery Van</th>
+                      <th>Barricades</th>
+                      <th>Escalate To</th>
+                      <th>Equipment</th>
+                      <th>Priority Override</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {templates.data.map((t, i) => (
+                      <tr key={i}>
+                        <td style={{ fontWeight: 600, color: '#e5e7eb', textTransform: 'capitalize' }}>{t.cause.replace(/_/g, ' ')}</td>
+                        <td>{t.base_officers}</td>
+                        <td>{t.recovery_van}</td>
+                        <td>{t.base_barricades}</td>
+                        <td style={{ fontSize: '12px', color: '#9ca3af' }}>{t.escalate_to.join(', ') || '—'}</td>
+                        <td style={{ fontSize: '12px', color: '#9ca3af' }}>{t.equipment.join(', ') || '—'}</td>
+                        <td>
+                          {t.priority_override
+                            ? <span className="badge badge-warning">{t.priority_override}</span>
+                            : <span style={{ color: '#4b5563', fontSize: '12px' }}>—</span>
+                          }
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <p style={{ color: '#4b5563', fontSize: '13px', paddingTop: '16px' }}>No templates loaded from API.</p>
+            )}
+          </div>
+        )}
+      </div>
+
     </div>
   );
 }

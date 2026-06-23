@@ -6,7 +6,7 @@ import {
 } from '../api/client';
 import StatCard from '../components/StatCard';
 import { SkeletonCard } from '../components/Loading';
-import InteractiveInsights from '../components/InteractiveInsights';
+import SystemOverview from '../components/InteractiveInsights';
 import {
   Shield,
   AlertTriangle,
@@ -56,14 +56,14 @@ export default function Dashboard() {
     queryFn: () => api.getCorridorsRisk(10),
   });
 
-  const highRisk   = corridors.data?.filter(c => c.risk_tier === 'HIGH')   || [];
-  const medRisk    = corridors.data?.filter(c => c.risk_tier === 'MEDIUM') || [];
+  const highRisk    = corridors.data?.filter(c => c.risk_tier === 'HIGH')   || [];
+  const medRisk     = corridors.data?.filter(c => c.risk_tier === 'MEDIUM') || [];
   const totalEvents = corridors.data?.reduce((s, c) => s + c.event_count, 0) || 0;
 
   const riskPieData = [
-    { name: 'HIGH',   value: highRisk.length,                                                        color: RISK_COLORS.HIGH },
-    { name: 'MEDIUM', value: medRisk.length,                                                          color: RISK_COLORS.MEDIUM },
-    { name: 'LOW',    value: (corridors.data?.length || 0) - highRisk.length - medRisk.length,        color: RISK_COLORS.LOW },
+    { name: 'HIGH',   value: highRisk.length,                                                          color: RISK_COLORS.HIGH   },
+    { name: 'MEDIUM', value: medRisk.length,                                                            color: RISK_COLORS.MEDIUM },
+    { name: 'LOW',    value: (corridors.data?.length || 0) - highRisk.length - medRisk.length,          color: RISK_COLORS.LOW    },
   ].filter(d => d.value > 0);
 
   const topCorridors = corridors.data?.slice(0, 8) || [];
@@ -74,26 +74,25 @@ export default function Dashboard() {
       {/* ── Page Header ── */}
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
             <div style={{
               width: '8px', height: '8px', borderRadius: '50%',
               background: health.data?.status === 'healthy' ? '#2ecc71' : '#ef4444',
               boxShadow: `0 0 10px ${health.data?.status === 'healthy' ? 'rgba(46,204,113,0.8)' : 'rgba(239,68,68,0.8)'}`,
             }} />
             <span style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              Live Dashboard
+              Live · EVAC Traffic Intelligence
             </span>
           </div>
           <h1 style={{ fontSize: '32px', fontWeight: 900, color: '#f3f4f6', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
             Command Center
           </h1>
-          <p style={{ fontSize: '15px', color: '#6b7280', marginTop: '8px', fontWeight: 400 }}>
-            Real-time Bengaluru traffic intelligence & incident management
+          <p style={{ fontSize: '15px', color: '#6b7280', marginTop: '8px' }}>
+            Real-time Bengaluru traffic intelligence — congestion, incidents & deployment
           </p>
         </div>
 
-        {/* Live badge */}
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '8px',
             padding: '10px 16px', borderRadius: '12px',
@@ -101,7 +100,7 @@ export default function Dashboard() {
             fontSize: '13px', color: '#9ca3af',
           }}>
             <Cpu size={14} color="#2ecc71" />
-            <span>{health.data?.model_count || 0}/4 models</span>
+            <span>{health.data?.model_count ?? '—'} / 4 models</span>
           </div>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '8px',
@@ -115,14 +114,11 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* ── Insights Widget ── */}
-      <InteractiveInsights />
-
-      {/* ── Stat Cards ── */}
+      {/* ── Stat Cards — live data from /health & /corridors/risk ── */}
       <div>
         <div className="section-header">
           <Activity size={14} />
-          Key Metrics
+          Live Metrics
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px' }}>
           {health.isLoading ? (
@@ -132,27 +128,27 @@ export default function Dashboard() {
               <StatCard
                 title="System Status"
                 value={health.data?.status === 'healthy' ? 'Healthy' : 'Degraded'}
-                subtitle={`${health.data?.model_count || 0}/4 models loaded`}
+                subtitle={`${health.data?.model_count ?? 0} / 4 ML models loaded`}
                 icon={<Shield size={22} />}
                 color={health.data?.status === 'healthy' ? 'accent' : 'danger'}
               />
               <StatCard
                 title="High-Risk Corridors"
                 value={highRisk.length}
-                subtitle={`${medRisk.length} medium risk · ${totalEvents.toLocaleString()} total events`}
+                subtitle={`${medRisk.length} medium · ${totalEvents.toLocaleString()} total events`}
                 icon={<AlertTriangle size={22} />}
                 color="danger"
               />
               <StatCard
                 title="Monitored Corridors"
-                value={corridors.data?.length || 0}
-                subtitle="Active corridor monitoring"
+                value={corridors.data?.length ?? 0}
+                subtitle="Active corridor monitoring via P2"
                 icon={<MapPin size={22} />}
                 color="primary"
               />
               <StatCard
                 title="API Uptime"
-                value={formatUptime(health.data?.uptime_seconds || 0)}
+                value={formatUptime(health.data?.uptime_seconds ?? 0)}
                 subtitle="Continuous operation"
                 icon={<Clock size={22} />}
                 color="accent"
@@ -162,16 +158,22 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* ── Charts Row ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '20px' }}>
-        {/* Bar Chart */}
+      {/* ── System Overview: 4 clickable feature cards ── */}
+      <SystemOverview />
+
+      {/* ── Charts — from /corridors/risk ── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '20px', alignItems: 'start' }}>
+        {/* Bar chart: top corridors risk score */}
         <div style={{
           background: '#111417', border: '1px solid rgba(255,255,255,0.06)',
           borderRadius: '16px', padding: '24px',
         }}>
           <div className="section-header">
             <TrendingUp size={14} />
-            Top Corridors — Risk Score
+            Top Corridors — Risk Score  
+            <span style={{ marginLeft: 'auto', fontSize: '11px', color: '#4b5563', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>
+              Source: GET /corridors/risk
+            </span>
           </div>
           {corridors.isLoading ? (
             <div className="skeleton" style={{ height: '280px', width: '100%' }} />
@@ -196,7 +198,7 @@ export default function Dashboard() {
                   {topCorridors.map((c, i) => (
                     <Cell
                       key={i}
-                      fill={RISK_COLORS[c.risk_tier as keyof typeof RISK_COLORS] || '#2ecc71'}
+                      fill={RISK_COLORS[c.risk_tier as keyof typeof RISK_COLORS] ?? '#2ecc71'}
                       opacity={0.85}
                     />
                   ))}
@@ -206,7 +208,7 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* Pie Chart */}
+        {/* Pie chart: risk distribution */}
         <div style={{
           background: '#111417', border: '1px solid rgba(255,255,255,0.06)',
           borderRadius: '16px', padding: '24px',
@@ -219,14 +221,12 @@ export default function Dashboard() {
             <div className="skeleton" style={{ height: '280px', width: '100%' }} />
           ) : (
             <>
-              <ResponsiveContainer width="100%" height={220}>
+              <ResponsiveContainer width="100%" height={200}>
                 <PieChart>
                   <Pie
                     data={riskPieData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={65}
-                    outerRadius={100}
+                    cx="50%" cy="50%"
+                    innerRadius={58} outerRadius={90}
                     paddingAngle={3}
                     dataKey="value"
                   >
@@ -237,12 +237,11 @@ export default function Dashboard() {
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
                 </PieChart>
               </ResponsiveContainer>
-              {/* Legend */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '12px' }}>
                 {riskPieData.map(d => (
                   <div key={d.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: d.color, flexShrink: 0 }} />
+                      <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: d.color }} />
                       <span style={{ fontSize: '13px', color: '#9ca3af', fontWeight: 500 }}>{d.name}</span>
                     </div>
                     <span style={{ fontSize: '15px', fontWeight: 700, color: '#f3f4f6' }}>{d.value}</span>
@@ -254,19 +253,23 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* ── Corridors Table ── */}
+      {/* ── Corridor Risk Table — from /corridors/risk ── */}
       <div style={{
         background: '#111417', border: '1px solid rgba(255,255,255,0.06)',
         borderRadius: '16px', padding: '24px', overflow: 'hidden',
       }}>
         <div className="section-header">
           <MapPin size={14} />
-          All Monitored Corridors
+          Corridor Risk Rankings
+          <span style={{ marginLeft: 'auto', fontSize: '11px', color: '#4b5563', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>
+            Ranked by composite risk score · min 10 events
+          </span>
         </div>
         <div style={{ overflowX: 'auto' }}>
           <table className="data-table">
             <thead>
               <tr>
+                <th>#</th>
                 <th>Corridor</th>
                 <th>Risk Tier</th>
                 <th>Risk Score</th>
@@ -278,22 +281,23 @@ export default function Dashboard() {
             </thead>
             <tbody>
               {corridors.isLoading
-                ? Array.from({ length: 5 }).map((_, i) => (
+                ? Array.from({ length: 6 }).map((_, i) => (
                     <tr key={i}>
-                      {Array.from({ length: 7 }).map((__, j) => (
-                        <td key={j}><div className="skeleton" style={{ height: '16px', width: '80%' }} /></td>
+                      {Array.from({ length: 8 }).map((__, j) => (
+                        <td key={j}><div className="skeleton" style={{ height: '14px', width: '80%' }} /></td>
                       ))}
                     </tr>
                   ))
                 : corridors.data?.map((c, i) => (
                     <tr key={i}>
+                      <td style={{ color: '#4b5563', fontWeight: 600 }}>{i + 1}</td>
                       <td style={{ fontWeight: 600, color: '#e5e7eb', textTransform: 'capitalize' }}>{c.corridor}</td>
                       <td>
                         <span className={`badge ${c.risk_tier === 'HIGH' ? 'badge-danger' : c.risk_tier === 'MEDIUM' ? 'badge-warning' : 'badge-success'}`}>
                           {c.risk_tier}
                         </span>
                       </td>
-                      <td style={{ fontFamily: 'monospace', fontWeight: 600, color: RISK_COLORS[c.risk_tier as keyof typeof RISK_COLORS] || '#9ca3af' }}>
+                      <td style={{ fontFamily: 'monospace', fontWeight: 600, color: RISK_COLORS[c.risk_tier as keyof typeof RISK_COLORS] ?? '#9ca3af' }}>
                         {c.risk_score.toFixed(3)}
                       </td>
                       <td>{c.event_count.toLocaleString()}</td>
@@ -305,7 +309,7 @@ export default function Dashboard() {
                           <span style={{ fontSize: '12px', color: '#9ca3af' }}>{(c.closure_rate * 100).toFixed(1)}%</span>
                         </div>
                       </td>
-                      <td>{c.peak_hour}:00</td>
+                      <td style={{ fontWeight: 600 }}>{c.peak_hour}:00</td>
                       <td style={{ color: '#6b7280', textTransform: 'capitalize', fontSize: '13px' }}>{c.dominant_cause.replace(/_/g, ' ')}</td>
                     </tr>
                   ))
@@ -320,7 +324,7 @@ export default function Dashboard() {
 }
 
 function formatUptime(seconds: number): string {
-  if (seconds < 60) return `${Math.round(seconds)}s`;
+  if (seconds < 60)   return `${Math.round(seconds)}s`;
   if (seconds < 3600) return `${Math.round(seconds / 60)}m`;
   return `${(seconds / 3600).toFixed(1)}h`;
 }
