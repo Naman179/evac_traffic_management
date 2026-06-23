@@ -1,0 +1,1601 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5817,
+          12.9904
+        ]
+      },
+      "properties": {
+        "cluster_id": 0,
+        "size": 6501,
+        "centroid_lat": 12.9904,
+        "centroid_lon": 77.5817,
+        "closure_rate": 0.0812,
+        "mean_impact": 5.0194,
+        "total_impact": 32631.0,
+        "high_priority_rate": 0.6797,
+        "risk_level": "MEDIUM",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6909,
+          12.9464
+        ]
+      },
+      "properties": {
+        "cluster_id": 1,
+        "size": 497,
+        "centroid_lat": 12.9464,
+        "centroid_lon": 77.6909,
+        "closure_rate": 0.0584,
+        "mean_impact": 5.7767,
+        "total_impact": 2871.0,
+        "high_priority_rate": 0.8913,
+        "risk_level": "MEDIUM",
+        "top_corridor": "orr east 1",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6606,
+          12.9674
+        ]
+      },
+      "properties": {
+        "cluster_id": 2,
+        "size": 11,
+        "centroid_lat": 12.9674,
+        "centroid_lon": 77.6606,
+        "closure_rate": 0.0909,
+        "mean_impact": 2.3636,
+        "total_impact": 26.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6152,
+          13.0109
+        ]
+      },
+      "properties": {
+        "cluster_id": 3,
+        "size": 8,
+        "centroid_lat": 13.0109,
+        "centroid_lon": 77.6152,
+        "closure_rate": 0.875,
+        "mean_impact": 5.5,
+        "total_impact": 44.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.735,
+          12.9875
+        ]
+      },
+      "properties": {
+        "cluster_id": 4,
+        "size": 19,
+        "centroid_lat": 12.9875,
+        "centroid_lon": 77.735,
+        "closure_rate": 0.1053,
+        "mean_impact": 2.4211,
+        "total_impact": 46.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7191,
+          13.2659
+        ]
+      },
+      "properties": {
+        "cluster_id": 5,
+        "size": 6,
+        "centroid_lat": 13.2659,
+        "centroid_lon": 77.7191,
+        "closure_rate": 0.1667,
+        "mean_impact": 2.6667,
+        "total_impact": 16.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.75,
+          12.9725
+        ]
+      },
+      "properties": {
+        "cluster_id": 6,
+        "size": 61,
+        "centroid_lat": 12.9725,
+        "centroid_lon": 77.75,
+        "closure_rate": 0.0164,
+        "mean_impact": 2.7213,
+        "total_impact": 166.0,
+        "high_priority_rate": 0.1639,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4956,
+          12.9454
+        ]
+      },
+      "properties": {
+        "cluster_id": 7,
+        "size": 8,
+        "centroid_lat": 12.9454,
+        "centroid_lon": 77.4956,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 16.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6221,
+          12.943
+        ]
+      },
+      "properties": {
+        "cluster_id": 8,
+        "size": 10,
+        "centroid_lat": 12.943,
+        "centroid_lon": 77.6221,
+        "closure_rate": 0.1,
+        "mean_impact": 2.4,
+        "total_impact": 24.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6726,
+          12.8455
+        ]
+      },
+      "properties": {
+        "cluster_id": 9,
+        "size": 42,
+        "centroid_lat": 12.8455,
+        "centroid_lon": 77.6726,
+        "closure_rate": 0.0238,
+        "mean_impact": 2.1905,
+        "total_impact": 92.0,
+        "high_priority_rate": 0.0238,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5585,
+          12.9392
+        ]
+      },
+      "properties": {
+        "cluster_id": 10,
+        "size": 8,
+        "centroid_lat": 12.9392,
+        "centroid_lon": 77.5585,
+        "closure_rate": 0.375,
+        "mean_impact": 3.5,
+        "total_impact": 28.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7328,
+          12.9697
+        ]
+      },
+      "properties": {
+        "cluster_id": 11,
+        "size": 5,
+        "centroid_lat": 12.9697,
+        "centroid_lon": 77.7328,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 10.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6021,
+          13.0224
+        ]
+      },
+      "properties": {
+        "cluster_id": 12,
+        "size": 11,
+        "centroid_lat": 13.0224,
+        "centroid_lon": 77.6021,
+        "closure_rate": 0.4545,
+        "mean_impact": 3.9091,
+        "total_impact": 43.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6184,
+          13.1213
+        ]
+      },
+      "properties": {
+        "cluster_id": 13,
+        "size": 8,
+        "centroid_lat": 13.1213,
+        "centroid_lon": 77.6184,
+        "closure_rate": 0.125,
+        "mean_impact": 2.5,
+        "total_impact": 20.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6438,
+          13.0455
+        ]
+      },
+      "properties": {
+        "cluster_id": 14,
+        "size": 67,
+        "centroid_lat": 13.0455,
+        "centroid_lon": 77.6438,
+        "closure_rate": 0.1493,
+        "mean_impact": 4.3582,
+        "total_impact": 292.0,
+        "high_priority_rate": 0.4328,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "construction",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.625,
+          12.8744
+        ]
+      },
+      "properties": {
+        "cluster_id": 15,
+        "size": 17,
+        "centroid_lat": 12.8744,
+        "centroid_lon": 77.625,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 34.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5482,
+          12.9067
+        ]
+      },
+      "properties": {
+        "cluster_id": 16,
+        "size": 39,
+        "centroid_lat": 12.9067,
+        "centroid_lon": 77.5482,
+        "closure_rate": 0.0256,
+        "mean_impact": 2.1538,
+        "total_impact": 84.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.717,
+          12.9943
+        ]
+      },
+      "properties": {
+        "cluster_id": 17,
+        "size": 17,
+        "centroid_lat": 12.9943,
+        "centroid_lon": 77.717,
+        "closure_rate": 0.2353,
+        "mean_impact": 2.9412,
+        "total_impact": 50.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6214,
+          12.9524
+        ]
+      },
+      "properties": {
+        "cluster_id": 18,
+        "size": 13,
+        "centroid_lat": 12.9524,
+        "centroid_lon": 77.6214,
+        "closure_rate": 0.0769,
+        "mean_impact": 2.3077,
+        "total_impact": 30.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5497,
+          13.0828
+        ]
+      },
+      "properties": {
+        "cluster_id": 19,
+        "size": 13,
+        "centroid_lat": 13.0828,
+        "centroid_lon": 77.5497,
+        "closure_rate": 0.2308,
+        "mean_impact": 2.9231,
+        "total_impact": 38.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6879,
+          12.82
+        ]
+      },
+      "properties": {
+        "cluster_id": 20,
+        "size": 15,
+        "centroid_lat": 12.82,
+        "centroid_lon": 77.6879,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 30.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7365,
+          12.9209
+        ]
+      },
+      "properties": {
+        "cluster_id": 21,
+        "size": 6,
+        "centroid_lat": 12.9209,
+        "centroid_lon": 77.7365,
+        "closure_rate": 0.3333,
+        "mean_impact": 3.3333,
+        "total_impact": 20.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "others",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6705,
+          12.8765
+        ]
+      },
+      "properties": {
+        "cluster_id": 22,
+        "size": 5,
+        "centroid_lat": 12.8765,
+        "centroid_lon": 77.6705,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 10.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7471,
+          12.9407
+        ]
+      },
+      "properties": {
+        "cluster_id": 23,
+        "size": 72,
+        "centroid_lat": 12.9407,
+        "centroid_lon": 77.7471,
+        "closure_rate": 0.0417,
+        "mean_impact": 2.2361,
+        "total_impact": 161.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5343,
+          12.962
+        ]
+      },
+      "properties": {
+        "cluster_id": 24,
+        "size": 13,
+        "centroid_lat": 12.962,
+        "centroid_lon": 77.5343,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 78.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "west of chord road",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7575,
+          13.0007
+        ]
+      },
+      "properties": {
+        "cluster_id": 25,
+        "size": 28,
+        "centroid_lat": 13.0007,
+        "centroid_lon": 77.7575,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 56.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.65,
+          12.8407
+        ]
+      },
+      "properties": {
+        "cluster_id": 26,
+        "size": 10,
+        "centroid_lat": 12.8407,
+        "centroid_lon": 77.65,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 20.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.754,
+          12.8829
+        ]
+      },
+      "properties": {
+        "cluster_id": 27,
+        "size": 19,
+        "centroid_lat": 12.8829,
+        "centroid_lon": 77.754,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 38.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "accident",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6939,
+          12.9077
+        ]
+      },
+      "properties": {
+        "cluster_id": 28,
+        "size": 6,
+        "centroid_lat": 12.9077,
+        "centroid_lon": 77.6939,
+        "closure_rate": 0.3333,
+        "mean_impact": 3.3333,
+        "total_impact": 20.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7387,
+          13.038
+        ]
+      },
+      "properties": {
+        "cluster_id": 29,
+        "size": 9,
+        "centroid_lat": 13.038,
+        "centroid_lon": 77.7387,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 18.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6378,
+          13.1793
+        ]
+      },
+      "properties": {
+        "cluster_id": 30,
+        "size": 13,
+        "centroid_lat": 13.1793,
+        "centroid_lon": 77.6378,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 78.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "bellary road 2",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6347,
+          12.9385
+        ]
+      },
+      "properties": {
+        "cluster_id": 31,
+        "size": 12,
+        "centroid_lat": 12.9385,
+        "centroid_lon": 77.6347,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 72.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "irr(thanisandra road)",
+        "dominant_cause": "water_logging",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7126,
+          13.2573
+        ]
+      },
+      "properties": {
+        "cluster_id": 32,
+        "size": 7,
+        "centroid_lat": 13.2573,
+        "centroid_lon": 77.7126,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 14.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.564,
+          12.8901
+        ]
+      },
+      "properties": {
+        "cluster_id": 33,
+        "size": 11,
+        "centroid_lat": 12.8901,
+        "centroid_lon": 77.564,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0909,
+        "total_impact": 23.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6458,
+          13.1907
+        ]
+      },
+      "properties": {
+        "cluster_id": 34,
+        "size": 10,
+        "centroid_lat": 13.1907,
+        "centroid_lon": 77.6458,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 60.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "bellary road 2",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5065,
+          13.011
+        ]
+      },
+      "properties": {
+        "cluster_id": 35,
+        "size": 8,
+        "centroid_lat": 13.011,
+        "centroid_lon": 77.5065,
+        "closure_rate": 0.125,
+        "mean_impact": 2.625,
+        "total_impact": 21.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.545,
+          12.8817
+        ]
+      },
+      "properties": {
+        "cluster_id": 36,
+        "size": 7,
+        "centroid_lat": 12.8817,
+        "centroid_lon": 77.545,
+        "closure_rate": 0.1429,
+        "mean_impact": 2.5714,
+        "total_impact": 18.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4703,
+          12.9039
+        ]
+      },
+      "properties": {
+        "cluster_id": 37,
+        "size": 13,
+        "centroid_lat": 12.9039,
+        "centroid_lon": 77.4703,
+        "closure_rate": 0.3077,
+        "mean_impact": 7.2308,
+        "total_impact": 94.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "HIGH",
+        "top_corridor": "mysore road",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6513,
+          13.0682
+        ]
+      },
+      "properties": {
+        "cluster_id": 38,
+        "size": 12,
+        "centroid_lat": 13.0682,
+        "centroid_lon": 77.6513,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0833,
+        "total_impact": 25.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "construction",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5056,
+          13.0627
+        ]
+      },
+      "properties": {
+        "cluster_id": 39,
+        "size": 5,
+        "centroid_lat": 13.0627,
+        "centroid_lon": 77.5056,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 10.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5788,
+          13.114
+        ]
+      },
+      "properties": {
+        "cluster_id": 40,
+        "size": 19,
+        "centroid_lat": 13.114,
+        "centroid_lon": 77.5788,
+        "closure_rate": 0.0,
+        "mean_impact": 2.1053,
+        "total_impact": 40.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6247,
+          13.0111
+        ]
+      },
+      "properties": {
+        "cluster_id": 41,
+        "size": 6,
+        "centroid_lat": 13.0111,
+        "centroid_lon": 77.6247,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 36.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "airport new south road",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4752,
+          12.9874
+        ]
+      },
+      "properties": {
+        "cluster_id": 42,
+        "size": 18,
+        "centroid_lat": 12.9874,
+        "centroid_lon": 77.4752,
+        "closure_rate": 0.3333,
+        "mean_impact": 3.3333,
+        "total_impact": 60.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6411,
+          13.0661
+        ]
+      },
+      "properties": {
+        "cluster_id": 43,
+        "size": 9,
+        "centroid_lat": 13.0661,
+        "centroid_lon": 77.6411,
+        "closure_rate": 0.2222,
+        "mean_impact": 3.0,
+        "total_impact": 27.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "construction",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5416,
+          12.8745
+        ]
+      },
+      "properties": {
+        "cluster_id": 44,
+        "size": 5,
+        "centroid_lat": 12.8745,
+        "centroid_lon": 77.5416,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 10.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.52,
+          13.0266
+        ]
+      },
+      "properties": {
+        "cluster_id": 45,
+        "size": 6,
+        "centroid_lat": 13.0266,
+        "centroid_lon": 77.52,
+        "closure_rate": 0.1667,
+        "mean_impact": 2.6667,
+        "total_impact": 16.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7624,
+          13.0541
+        ]
+      },
+      "properties": {
+        "cluster_id": 46,
+        "size": 6,
+        "centroid_lat": 13.0541,
+        "centroid_lon": 77.7624,
+        "closure_rate": 0.3333,
+        "mean_impact": 3.3333,
+        "total_impact": 20.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6802,
+          13.1844
+        ]
+      },
+      "properties": {
+        "cluster_id": 47,
+        "size": 5,
+        "centroid_lat": 13.1844,
+        "centroid_lon": 77.6802,
+        "closure_rate": 0.0,
+        "mean_impact": 2.8,
+        "total_impact": 14.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "construction",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4854,
+          12.9123
+        ]
+      },
+      "properties": {
+        "cluster_id": 48,
+        "size": 7,
+        "centroid_lat": 12.9123,
+        "centroid_lon": 77.4854,
+        "closure_rate": 0.5714,
+        "mean_impact": 7.7143,
+        "total_impact": 54.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "HIGH",
+        "top_corridor": "mysore road",
+        "dominant_cause": "others",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5646,
+          13.0967
+        ]
+      },
+      "properties": {
+        "cluster_id": 49,
+        "size": 8,
+        "centroid_lat": 13.0967,
+        "centroid_lon": 77.5646,
+        "closure_rate": 0.0,
+        "mean_impact": 2.125,
+        "total_impact": 17.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "accident",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7499,
+          13.0456
+        ]
+      },
+      "properties": {
+        "cluster_id": 50,
+        "size": 7,
+        "centroid_lat": 13.0456,
+        "centroid_lon": 77.7499,
+        "closure_rate": 0.2857,
+        "mean_impact": 3.1429,
+        "total_impact": 22.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5616,
+          13.0321
+        ]
+      },
+      "properties": {
+        "cluster_id": 51,
+        "size": 19,
+        "centroid_lat": 13.0321,
+        "centroid_lon": 77.5616,
+        "closure_rate": 0.1579,
+        "mean_impact": 2.6842,
+        "total_impact": 51.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "tree_fall",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5758,
+          13.061
+        ]
+      },
+      "properties": {
+        "cluster_id": 52,
+        "size": 5,
+        "centroid_lat": 13.061,
+        "centroid_lon": 77.5758,
+        "closure_rate": 0.2,
+        "mean_impact": 2.8,
+        "total_impact": 14.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "tree_fall",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6102,
+          12.8789
+        ]
+      },
+      "properties": {
+        "cluster_id": 53,
+        "size": 15,
+        "centroid_lat": 12.8789,
+        "centroid_lon": 77.6102,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 30.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6366,
+          13.0048
+        ]
+      },
+      "properties": {
+        "cluster_id": 54,
+        "size": 6,
+        "centroid_lat": 13.0048,
+        "centroid_lon": 77.6366,
+        "closure_rate": 0.1667,
+        "mean_impact": 2.6667,
+        "total_impact": 16.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "congestion",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7112,
+          12.8015
+        ]
+      },
+      "properties": {
+        "cluster_id": 55,
+        "size": 5,
+        "centroid_lat": 12.8015,
+        "centroid_lon": 77.7112,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 10.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "construction",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5463,
+          13.0577
+        ]
+      },
+      "properties": {
+        "cluster_id": 56,
+        "size": 12,
+        "centroid_lat": 13.0577,
+        "centroid_lon": 77.5463,
+        "closure_rate": 0.0833,
+        "mean_impact": 2.3333,
+        "total_impact": 28.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6326,
+          13.0579
+        ]
+      },
+      "properties": {
+        "cluster_id": 57,
+        "size": 12,
+        "centroid_lat": 13.0579,
+        "centroid_lon": 77.6326,
+        "closure_rate": 0.0,
+        "mean_impact": 6.0,
+        "total_impact": 72.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "MEDIUM",
+        "top_corridor": "hennur main road",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.543,
+          12.9197
+        ]
+      },
+      "properties": {
+        "cluster_id": 58,
+        "size": 7,
+        "centroid_lat": 12.9197,
+        "centroid_lon": 77.543,
+        "closure_rate": 0.0,
+        "mean_impact": 2.1429,
+        "total_impact": 15.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6903,
+          13.2296
+        ]
+      },
+      "properties": {
+        "cluster_id": 59,
+        "size": 6,
+        "centroid_lat": 13.2296,
+        "centroid_lon": 77.6903,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 12.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6203,
+          13.0272
+        ]
+      },
+      "properties": {
+        "cluster_id": 60,
+        "size": 8,
+        "centroid_lat": 13.0272,
+        "centroid_lon": 77.6203,
+        "closure_rate": 0.0,
+        "mean_impact": 2.25,
+        "total_impact": 18.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6166,
+          12.8767
+        ]
+      },
+      "properties": {
+        "cluster_id": 61,
+        "size": 7,
+        "centroid_lat": 12.8767,
+        "centroid_lon": 77.6166,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 14.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "pot_holes",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7382,
+          12.8873
+        ]
+      },
+      "properties": {
+        "cluster_id": 62,
+        "size": 5,
+        "centroid_lat": 12.8873,
+        "centroid_lon": 77.7382,
+        "closure_rate": 0.2,
+        "mean_impact": 2.8,
+        "total_impact": 14.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6605,
+          12.9018
+        ]
+      },
+      "properties": {
+        "cluster_id": 63,
+        "size": 5,
+        "centroid_lat": 12.9018,
+        "centroid_lon": 77.6605,
+        "closure_rate": 0.2,
+        "mean_impact": 3.0,
+        "total_impact": 15.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "HIGH",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "others",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6278,
+          13.1027
+        ]
+      },
+      "properties": {
+        "cluster_id": 64,
+        "size": 6,
+        "centroid_lat": 13.1027,
+        "centroid_lon": 77.6278,
+        "closure_rate": 0.0,
+        "mean_impact": 2.0,
+        "total_impact": 12.0,
+        "high_priority_rate": 0.0,
+        "risk_level": "LOW",
+        "top_corridor": "non-corridor",
+        "dominant_cause": "procession",
+        "eps_metres": 500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6776,
+          12.9557
+        ]
+      },
+      "properties": {
+        "cluster_id": 65,
+        "size": 5,
+        "centroid_lat": 12.9557,
+        "centroid_lon": 77.6776,
+        "closure_rate": 0.2,
+        "mean_impact": 6.6,
+        "total_impact": 33.0,
+        "high_priority_rate": 1.0,
+        "risk_level": "HIGH",
+        "top_corridor": "old airport road",
+        "dominant_cause": "vehicle_breakdown",
+        "eps_metres": 500
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-23T00:07:32.643748",
+    "n_clusters": 66,
+    "n_noise": 311,
+    "eps_metres": 500,
+    "min_samples": 5,
+    "risk_level_counts": {
+      "LOW": 28,
+      "HIGH": 26,
+      "MEDIUM": 12
+    }
+  }
+}

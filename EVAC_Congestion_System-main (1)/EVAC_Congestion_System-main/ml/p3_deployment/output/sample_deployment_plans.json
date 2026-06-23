@@ -1,0 +1,760 @@
+[
+  {
+    "incident_id": "FKID002295",
+    "cause": "vehicle_breakdown",
+    "corridor": "old airport road",
+    "zone": "None",
+    "location": {
+      "latitude": 12.96044159,
+      "longitude": 77.64359885
+    },
+    "start_datetime": "2024-03-01 12:54:44.007+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 4.2,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.6277,
+    "recommended_officers": 6,
+    "recommended_barricades": 7,
+    "recovery_van_needed": true,
+    "escalate_to": [],
+    "equipment": [
+      "traffic cones",
+      "reflective signs",
+      "tow cable",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.96083262160453,
+          77.64179733234134
+        ],
+        [
+          12.956052534334235,
+          77.64259571810513
+        ],
+        [
+          12.955128947740576,
+          77.64260598119063
+        ],
+        [
+          12.95596098433425,
+          77.64301748847389
+        ],
+        [
+          12.959958996015157,
+          77.64582213133698
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.05,
+      "extra_distance_km": 1.24,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "vehicle_breakdown",
+    "notes": "Most common cause. Recovery van is the critical resource. Park patrol vehicle upstream with hazard lights.",
+    "explanation": [
+      "Base template: vehicle_breakdown -> 2 officers, 2 barricades, 1 recovery van",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (old airport road) -> +10% officers, +10% barricades",
+      "Off-peak hour (12:00) -> no time adjustment",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Final recommendation: 6 officers, 7 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID000727",
+    "cause": "accident",
+    "corridor": "hosur road",
+    "zone": "None",
+    "location": {
+      "latitude": 12.9109944,
+      "longitude": 77.6265845
+    },
+    "start_datetime": "2024-02-08 17:49:50.142+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 6.0,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.5488,
+    "recommended_officers": 9,
+    "recommended_barricades": 10,
+    "recovery_van_needed": true,
+    "escalate_to": [
+      "Ambulance / 108",
+      "Fire & Emergency (if entrapment)"
+    ],
+    "equipment": [
+      "first aid kit",
+      "traffic cones",
+      "reflective signs",
+      "flares",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.912189744952123,
+          77.6252056628441
+        ],
+        [
+          12.907634453556906,
+          77.6235186592003
+        ],
+        [
+          12.90636175998296,
+          77.62359840976822
+        ],
+        [
+          12.906433053558628,
+          77.62490447393195
+        ],
+        [
+          12.90859764782163,
+          77.62934911734106
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.36,
+      "direct_distance_km": 0.2,
+      "extra_distance_km": 1.16,
+      "estimated_time_min": 3.3,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "accident",
+    "notes": "Secure the scene first. Preserve evidence for FIR. One officer directs traffic; one manages scene.",
+    "explanation": [
+      "Base template: accident -> 4 officers, 4 barricades, 1 recovery van, escalate to Ambulance / 108, Fire & Emergency (if entrapment)",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (hosur road) -> +10% officers, +10% barricades",
+      "Off-peak hour (17:00) -> no time adjustment",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Final recommendation: 9 officers, 10 barricades",
+      "Diversion route computed: 1.36 km, ~3.3 min"
+    ]
+  },
+  {
+    "incident_id": "FKID003029",
+    "cause": "pot_holes",
+    "corridor": "hennur main road",
+    "zone": "None",
+    "location": {
+      "latitude": 13.0399769,
+      "longitude": 77.6243276
+    },
+    "start_datetime": "2024-03-26 05:09:16.099+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 11.04,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.5602,
+    "recommended_officers": 5,
+    "recommended_barricades": 7,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "BBMP / Civil Works"
+    ],
+    "equipment": [
+      "warning signs",
+      "traffic cones",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          13.039526057457852,
+          77.62611491128662
+        ],
+        [
+          13.044329959523164,
+          77.62548454516313
+        ],
+        [
+          13.04521182081142,
+          77.62567133914605
+        ],
+        [
+          13.044352459523159,
+          77.6253953452684
+        ],
+        [
+          13.040450230286622,
+          77.62245108203646
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.01,
+      "extra_distance_km": 1.27,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "pot_holes",
+    "notes": "Place warning cones immediately. Escalate to BBMP for repair. Monitor until repair crew arrives.",
+    "explanation": [
+      "Base template: pot_holes -> 1 officers, 2 barricades, escalate to BBMP / Civil Works",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (hennur main road) -> +10% officers, +10% barricades",
+      "Morning Peak hour (05:00) -> +20% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Medium-duration event (11.0h) -> +1 officer for shift overlap",
+      "Final recommendation: 5 officers, 7 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID000856",
+    "cause": "water_logging",
+    "corridor": "west of chord road",
+    "zone": "West Zone 1",
+    "location": {
+      "latitude": 12.9994047,
+      "longitude": 77.5496096
+    },
+    "start_datetime": "2024-01-01 21:07:37.305+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 8.28,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.5667,
+    "recommended_officers": 5,
+    "recommended_barricades": 9,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "BBMP Storm Water Drain Dept",
+      "Fire Dept (if deep)"
+    ],
+    "equipment": [
+      "warning signs",
+      "barricade tape",
+      "depth markers",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.99848291847306,
+          77.55119470532007
+        ],
+        [
+          13.0032659108359,
+          77.55197468921486
+        ],
+        [
+          13.004043500434797,
+          77.55243851595193
+        ],
+        [
+          13.003276610835888,
+          77.55195628931683
+        ],
+        [
+          13.000337171915454,
+          77.54800608283725
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.0,
+      "extra_distance_km": 1.27,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "water_logging",
+    "notes": "Do NOT allow vehicles to enter flooded stretch. Check for submerged manholes. Alert Fire Dept if depth > 2ft.",
+    "explanation": [
+      "Base template: water_logging -> 1 officers, 3 barricades, escalate to BBMP Storm Water Drain Dept, Fire Dept (if deep)",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (west of chord road) -> +10% officers, +10% barricades",
+      "Evening Peak hour (21:00) -> +25% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Medium-duration event (8.3h) -> +1 officer for shift overlap",
+      "Final recommendation: 5 officers, 9 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID000144",
+    "cause": "tree_fall",
+    "corridor": "mysore road",
+    "zone": "None",
+    "location": {
+      "latitude": 12.961311,
+      "longitude": 77.55932
+    },
+    "start_datetime": "2024-03-07 23:41:21.369+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 6.21,
+    "corridor_risk_tier": "HIGH",
+    "corridor_risk_score": 0.7994,
+    "recommended_officers": 8,
+    "recommended_barricades": 9,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "Forest Department",
+      "BBMP Tree Cell",
+      "BESCOM (if wires involved)"
+    ],
+    "equipment": [
+      "barricade tape",
+      "reflective signs",
+      "traffic cones",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.959512356788165,
+          77.55932
+        ],
+        [
+          12.961310959389182,
+          77.56393416902286
+        ],
+        [
+          12.961310941520424,
+          77.56485700282717
+        ],
+        [
+          12.961310959389182,
+          77.56393416902286
+        ],
+        [
+          12.96310964321184,
+          77.55932
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.0,
+      "extra_distance_km": 1.28,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "tree_fall",
+    "notes": "Check for downed power lines FIRST \u2014 do not touch if wires present. Cordon area until Forest/BBMP removal team arrives.",
+    "explanation": [
+      "Base template: tree_fall -> 2 officers, 3 barricades, escalate to Forest Department, BBMP Tree Cell, BESCOM (if wires involved)",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "HIGH-risk corridor (mysore road) -> +30% officers, +20% barricades",
+      "Evening Peak hour (23:00) -> +25% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Medium-duration event (6.2h) -> +1 officer for shift overlap",
+      "Final recommendation: 8 officers, 9 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID001840",
+    "cause": "construction",
+    "corridor": "varthur road",
+    "zone": "None",
+    "location": {
+      "latitude": 12.9568175,
+      "longitude": 77.7011908
+    },
+    "start_datetime": "2024-03-17 11:06:56.213+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 14.4,
+    "corridor_risk_tier": "HIGH",
+    "corridor_risk_score": 0.7903,
+    "recommended_officers": 6,
+    "recommended_barricades": 11,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "BBMP / PWD"
+    ],
+    "equipment": [
+      "barricade tape",
+      "reflective signs",
+      "diversion boards",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.955139002570318,
+          77.70052756939387
+        ],
+        [
+          12.955201592983505,
+          77.70549664392853
+        ],
+        [
+          12.95499355309569,
+          77.70640330839814
+        ],
+        [
+          12.955431892982851,
+          77.70558764791002
+        ],
+        [
+          12.958726295752102,
+          77.70194504016013
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.03,
+      "extra_distance_km": 1.25,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "construction",
+    "notes": "Verify construction permit. Ensure night-visibility markers. Coordinate with contractor for expected duration.",
+    "explanation": [
+      "Base template: construction -> 1 officers, 4 barricades, escalate to BBMP / PWD",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "HIGH-risk corridor (varthur road) -> +30% officers, +20% barricades",
+      "Off-peak hour (11:00) -> no time adjustment",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Long-duration event (14.4h) -> +2 officers for shift relief",
+      "Final recommendation: 6 officers, 11 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID008054",
+    "cause": "public_event",
+    "corridor": "orr west 1",
+    "zone": "None",
+    "location": {
+      "latitude": 12.90648742,
+      "longitude": 77.57322907
+    },
+    "start_datetime": "2024-01-27 20:05:46+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 11.04,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.4289,
+    "recommended_officers": 15,
+    "recommended_barricades": 16,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "Event Coordinator",
+      "Traffic Control Room"
+    ],
+    "equipment": [
+      "barricade tape",
+      "diversion boards",
+      "PA system",
+      "CCTV mobile unit",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.905207641363763,
+          77.57452566099003
+        ],
+        [
+          12.909647000196205,
+          77.57651147604057
+        ],
+        [
+          12.913196251314792,
+          77.57421222318264
+        ],
+        [
+          12.915481680186634,
+          77.57059997267477
+        ],
+        [
+          12.913601872246506,
+          77.56602085546984
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 2.01,
+      "direct_distance_km": 0.91,
+      "extra_distance_km": 1.1,
+      "estimated_time_min": 4.8,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "public_event",
+    "notes": "Pre-deploy barricades 2h before event start. Coordinate diversion routes with traffic control room. Post-event: phase removal to avoid secondary congestion.",
+    "explanation": [
+      "Base template: public_event -> 6 officers, 8 barricades, escalate to Event Coordinator, Traffic Control Room",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (orr west 1) -> +10% officers, +10% barricades",
+      "Evening Peak hour (20:00) -> +25% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Medium-duration event (11.0h) -> +1 officer for shift overlap",
+      "Final recommendation: 15 officers, 16 barricades",
+      "Diversion route computed: 2.01 km, ~4.8 min"
+    ]
+  },
+  {
+    "incident_id": "FKID002629",
+    "cause": "congestion",
+    "corridor": "tumkur road",
+    "zone": "None",
+    "location": {
+      "latitude": 13.0453965,
+      "longitude": 77.5082477
+    },
+    "start_datetime": "2024-03-06 07:22:29.883+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 2.76,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.428,
+    "recommended_officers": 8,
+    "recommended_barricades": 4,
+    "recovery_van_needed": false,
+    "escalate_to": [],
+    "equipment": [
+      "handheld radio",
+      "whistle",
+      "reflective jacket",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          13.043667270050626,
+          77.50875566272423
+        ],
+        [
+          13.046633603314403,
+          77.51268532355586
+        ],
+        [
+          13.04727726490552,
+          77.51345646212982
+        ],
+        [
+          13.047426103312027,
+          77.51245253777967
+        ],
+        [
+          13.047918228959041,
+          77.50750692854314
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.3,
+      "direct_distance_km": 0.09,
+      "extra_distance_km": 1.21,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "congestion",
+    "notes": "Deploy at junction points. Manual signal override may be needed. Focus on clearing bottleneck, not blocking.",
+    "explanation": [
+      "Base template: congestion -> 3 officers, 0 barricades",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (tumkur road) -> +10% officers, +10% barricades",
+      "Morning Peak hour (07:00) -> +20% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Final recommendation: 8 officers, 4 barricades",
+      "Diversion route computed: 1.3 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID007248",
+    "cause": "procession",
+    "corridor": "magadi road",
+    "zone": "Central Zone 2",
+    "location": {
+      "latitude": 12.9742147,
+      "longitude": 77.5662877
+    },
+    "start_datetime": "2023-12-27 05:29:30.884+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 8.28,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.4791,
+    "recommended_officers": 13,
+    "recommended_barricades": 13,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "Religious Affairs Dept",
+      "Traffic Control Room"
+    ],
+    "equipment": [
+      "barricade tape",
+      "diversion boards",
+      "PA system",
+      "road closure boards",
+      "diversion boards"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.972419155496604,
+          77.56639599793061
+        ],
+        [
+          12.974478494428515,
+          77.57089416343561
+        ],
+        [
+          12.974604193590666,
+          77.57181105891696
+        ],
+        [
+          12.974624394428046,
+          77.57088536613821
+        ],
+        [
+          12.976156144458614,
+          77.566170600442
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.28,
+      "direct_distance_km": 0.02,
+      "extra_distance_km": 1.26,
+      "estimated_time_min": 3.1,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "procession",
+    "notes": "Deploy along entire route. Lead and tail vehicles. Coordinate with organiser for exact timing and route.",
+    "explanation": [
+      "Base template: procession -> 5 officers, 6 barricades, escalate to Religious Affairs Dept, Traffic Control Room",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (magadi road) -> +10% officers, +10% barricades",
+      "Morning Peak hour (05:00) -> +20% officers",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Medium-duration event (8.3h) -> +1 officer for shift overlap",
+      "Final recommendation: 13 officers, 13 barricades",
+      "Diversion route computed: 1.28 km, ~3.1 min"
+    ]
+  },
+  {
+    "incident_id": "FKID001857",
+    "cause": "vip_movement",
+    "corridor": "old airport road",
+    "zone": "None",
+    "location": {
+      "latitude": 12.95876021,
+      "longitude": 77.66366888
+    },
+    "start_datetime": "2024-03-17 17:05:46+00",
+    "impact_score": 8,
+    "closure_probability": 0.85,
+    "priority_probability": 0.85,
+    "expected_duration_h": 4.8,
+    "corridor_risk_tier": "MEDIUM",
+    "corridor_risk_score": 0.6277,
+    "recommended_officers": 15,
+    "recommended_barricades": 19,
+    "recovery_van_needed": false,
+    "escalate_to": [
+      "SPG / Protocol Division",
+      "Traffic Control Room"
+    ],
+    "equipment": [
+      "road closure boards",
+      "diversion boards",
+      "radio set"
+    ],
+    "diversion_triggered": true,
+    "diversion_route": {
+      "status": "ok",
+      "method": "geometric_fallback",
+      "route_coords": [
+        [
+          12.959118828900785,
+          77.6618602876025
+        ],
+        [
+          12.954353888058126,
+          77.66274890278424
+        ],
+        [
+          12.953347083282488,
+          77.66319801680373
+        ],
+        [
+          12.954102808058158,
+          77.66401511371159
+        ],
+        [
+          12.958150498623054,
+          77.66674367536402
+        ]
+      ],
+      "n_waypoints": 5,
+      "detour_distance_km": 1.32,
+      "direct_distance_km": 0.14,
+      "extra_distance_km": 1.18,
+      "estimated_time_min": 3.2,
+      "blocked_nodes": 0,
+      "blocked_edges": 0
+    },
+    "template_used": "vip_movement",
+    "notes": "Full route sanitisation. Advance party 30 min before. Coordinate with SPG for exact convoy timing.",
+    "explanation": [
+      "Base template: vip_movement -> 8 officers, 10 barricades, escalate to SPG / Protocol Division, Traffic Control Room",
+      "Impact score 8/10 -> officer multiplier 1.45x, barricade multiplier 1.30x",
+      "MEDIUM-risk corridor (old airport road) -> +10% officers, +10% barricades",
+      "Off-peak hour (17:00) -> no time adjustment",
+      "Road closure probable (85%) -> +2 officers (diversion management), +4 barricades (closure points), diversion route triggered",
+      "Final recommendation: 15 officers, 19 barricades",
+      "Diversion route computed: 1.32 km, ~3.2 min"
+    ]
+  }
+]

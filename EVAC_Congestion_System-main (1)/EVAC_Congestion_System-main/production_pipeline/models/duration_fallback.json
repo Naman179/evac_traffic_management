@@ -1,0 +1,43 @@
+{
+  "global_median_h": 1.0204039669444445,
+  "cause_medians": {
+    "accident": 0.6895452241666666,
+    "congestion": 1.1922552136111113,
+    "construction": 31.631160705833334,
+    "debris": 382.96979847041666,
+    "others": 3.9299050258333335,
+    "pot_holes": 96.40234673638889,
+    "procession": 0.6089658391666666,
+    "protest": 0.4075712052777778,
+    "road_conditions": 103.80968278694445,
+    "test_demo": 0.030397389583333333,
+    "tree_fall": 10.420665476666667,
+    "vehicle_breakdown": 0.6850457748611112,
+    "water_logging": 44.37275839888889
+  },
+  "n_examples": {
+    "accident": 91,
+    "congestion": 22,
+    "construction": 107,
+    "debris": 2,
+    "others": 385,
+    "pot_holes": 120,
+    "procession": 13,
+    "protest": 2,
+    "road_conditions": 76,
+    "test_demo": 2,
+    "tree_fall": 169,
+    "vehicle_breakdown": 1836,
+    "water_logging": 224
+  },
+  "fallback_causes": [
+    "congestion",
+    "debris",
+    "procession",
+    "protest",
+    "test_demo"
+  ],
+  "fallback_min_examples": 30,
+  "duration_log_p95": 5.769101858296455,
+  "closure_threshold": 0.5299999999999999
+}

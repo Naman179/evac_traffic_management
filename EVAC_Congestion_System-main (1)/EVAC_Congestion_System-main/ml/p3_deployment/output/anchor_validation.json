@@ -1,0 +1,405 @@
+{
+  "summary": {
+    "n_cases": 128,
+    "officer_stats": {
+      "mean": 4.6,
+      "median": 4,
+      "min": 2,
+      "max": 9
+    },
+    "barricade_stats": {
+      "mean": 4.3,
+      "median": 4
+    },
+    "impact_score_stats": {
+      "mean": 3.6,
+      "median": 3
+    },
+    "high_deployment_count": 25,
+    "closure_triggered_count": 1,
+    "cause_distribution": {
+      "accident": 126,
+      "vehicle_breakdown": 2
+    }
+  },
+  "comparisons": [
+    {
+      "incident_id": "FKID000005",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Hebbala",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID000037",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Electronic City",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID000516",
+      "cause": "accident",
+      "corridor": "Bellary Road 1",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Sadashivanagar",
+      "engine_recommended_officers": 6,
+      "engine_recommended_barricades": 5,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 6 officers, 5 barricades"
+    },
+    {
+      "incident_id": "FKID000942",
+      "cause": "accident",
+      "corridor": "Mysore Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Halasuru Gate",
+      "engine_recommended_officers": 9,
+      "engine_recommended_barricades": 6,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 9 officers, 6 barricades"
+    },
+    {
+      "incident_id": "FKID000989",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "HAL Old Airport",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID001477",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Basavanagudi",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID001509",
+      "cause": "accident",
+      "corridor": "Mysore Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Byatarayanapura",
+      "engine_recommended_officers": 9,
+      "engine_recommended_barricades": 6,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 9 officers, 6 barricades"
+    },
+    {
+      "incident_id": "FKID001831",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "K.G. Halli",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID001929",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Chikkajala",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID001998",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "V.V.Puram (C.Pet)",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID002096",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Basavanagudi",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID002098",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Basavanagudi",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID002121",
+      "cause": "accident",
+      "corridor": "Airport New South Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Pulikeshinagar(F.Town)",
+      "engine_recommended_officers": 6,
+      "engine_recommended_barricades": 6,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 6 officers, 6 barricades"
+    },
+    {
+      "incident_id": "FKID002130",
+      "cause": "accident",
+      "corridor": "Mysore Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Halasuru Gate",
+      "engine_recommended_officers": 6,
+      "engine_recommended_barricades": 6,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 6 officers, 6 barricades"
+    },
+    {
+      "incident_id": "FKID002355",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Rajajinagar",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID002399",
+      "cause": "accident",
+      "corridor": "West of Chord Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Malleshwaram",
+      "engine_recommended_officers": 6,
+      "engine_recommended_barricades": 5,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 6 officers, 5 barricades"
+    },
+    {
+      "incident_id": "FKID002478",
+      "cause": "accident",
+      "corridor": "Hosur Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Madiwala",
+      "engine_recommended_officers": 8,
+      "engine_recommended_barricades": 5,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 8 officers, 5 barricades"
+    },
+    {
+      "incident_id": "FKID003360",
+      "cause": "accident",
+      "corridor": "Bellary Road 2",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Chikkajala",
+      "engine_recommended_officers": 6,
+      "engine_recommended_barricades": 5,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 6 officers, 5 barricades"
+    },
+    {
+      "incident_id": "FKID003623",
+      "cause": "accident",
+      "corridor": "Non-corridor",
+      "priority": "Low",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Devanahalli Airport",
+      "engine_recommended_officers": 4,
+      "engine_recommended_barricades": 4,
+      "engine_impact_score": 3,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 4 officers, 4 barricades"
+    },
+    {
+      "incident_id": "FKID003718",
+      "cause": "accident",
+      "corridor": "Bannerghata Road",
+      "priority": "High",
+      "requires_closure": false,
+      "had_real_officer": true,
+      "police_station": "Hulimavu",
+      "engine_recommended_officers": 8,
+      "engine_recommended_barricades": 5,
+      "engine_impact_score": 6,
+      "engine_closure_prob": 0.19,
+      "engine_escalations": [
+        "Ambulance / 108",
+        "Fire & Emergency (if entrapment)"
+      ],
+      "explanation_summary": "Final recommendation: 8 officers, 5 barricades"
+    }
+  ],
+  "anchors_summary": {
+    "total_rows": 8173,
+    "officer_assigned_count": 128,
+    "officer_assigned_pct": 1.57,
+    "real_route_count": 78,
+    "real_route_pct": 0.95,
+    "officer_cause_distribution": {
+      "accident": 126,
+      "vehicle_breakdown": 2
+    },
+    "officer_top_corridors": {
+      "Non-corridor": 104,
+      "Mysore Road": 8,
+      "ORR East 1": 4,
+      "Bannerghata Road": 3,
+      "Bellary Road 1": 2
+    }
+  }
+}

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the ML assets and models directory into the container
+      - ./EVAC_Congestion_System-main (1):/app/EVAC_Congestion_System-main (1):ro
+    environment:
+      - DEBUG=false
+      - CORS_ORIGINS=["http://localhost", "http://localhost:80"]
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

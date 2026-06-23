@@ -1,0 +1,76 @@
+{
+  "version": "v3-leakfixed",
+  "trained_at": "2026-06-22T23:32:19.090395",
+  "n_rows": 8173,
+  "n_rows_with_duration": 3049,
+  "features": {
+    "categorical": [
+      "cause_cat",
+      "corridor_cat",
+      "zone_cat",
+      "veh_type_cat",
+      "police_station_cat"
+    ],
+    "numeric": [
+      "hour",
+      "dow",
+      "month",
+      "is_weekend",
+      "is_morning_peak",
+      "is_evening_peak",
+      "is_midday_quiet",
+      "is_planned",
+      "lat",
+      "lon"
+    ],
+    "all": [
+      "cause_cat",
+      "corridor_cat",
+      "zone_cat",
+      "veh_type_cat",
+      "police_station_cat",
+      "hour",
+      "dow",
+      "month",
+      "is_weekend",
+      "is_morning_peak",
+      "is_evening_peak",
+      "is_midday_quiet",
+      "is_planned",
+      "lat",
+      "lon"
+    ],
+    "high_card_col": "corridor_cat"
+  },
+  "excluded_features_leak": [
+    "event_span_deg",
+    "has_end_coord"
+  ],
+  "metrics": {
+    "closure_cv_auc": 0.7877672459344719,
+    "cause_alone_auc": 0.7202459224280723,
+    "closure_best_threshold": 0.5299999999999999,
+    "closure_best_f1": 0.4558071585098612,
+    "priority_cv_auc": 0.9999063948712814,
+    "priority_is_deterministic": true,
+    "duration_mae_h": 36.71313213208077,
+    "duration_median_ae_h": 0.7160908961976792,
+    "duration_r2_log": 0.4720179791032967,
+    "duration_p90_coverage_pct": 89.66874385044277
+  },
+  "best_params_closure": {
+    "subsample": 0.85,
+    "reg_lambda": 0,
+    "reg_alpha": 0,
+    "num_leaves": 15,
+    "n_estimators": 700,
+    "min_child_samples": 10,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.6
+  },
+  "impact_weights": {
+    "priority": 0.4,
+    "closure": 0.4,
+    "duration": 0.2
+  }
+}

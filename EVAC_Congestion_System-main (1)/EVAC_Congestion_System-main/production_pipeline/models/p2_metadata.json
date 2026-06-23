@@ -1,0 +1,55 @@
+{
+  "version": "v1",
+  "trained_at": "2026-06-23T00:07:32.832728",
+  "n_rows_total": 8172,
+  "n_rows_raw": 8173,
+  "bounding_box": {
+    "lat_min": 12.8,
+    "lat_max": 13.27,
+    "lon_min": 77.31,
+    "lon_max": 77.77
+  },
+  "dbscan": {
+    "eps_metres": 500,
+    "min_samples": 5,
+    "n_clusters": 66,
+    "n_noise": 311,
+    "noise_fraction": 0.0381,
+    "risk_levels": {
+      "LOW": 28,
+      "HIGH": 26,
+      "MEDIUM": 12
+    }
+  },
+  "kde": {
+    "bandwidth": 0.02,
+    "grid_size": 200,
+    "weighted_by": "P1 composite_impact_score (fallback: local proxy)",
+    "time_bands": [
+      "early_morning",
+      "evening",
+      "late_night",
+      "off_peak"
+    ],
+    "causes": [
+      "vehicle_breakdown",
+      "others",
+      "pot_holes",
+      "construction",
+      "water_logging",
+      "accident"
+    ]
+  },
+  "corridor": {
+    "n_corridors_ranked": 22,
+    "min_events_threshold": 10,
+    "overall_closure_baseline": 0.0827,
+    "non_corridor_fraction": 0.3846
+  },
+  "api_endpoints": {
+    "GET /heatmap": "Returns KDE grid as Leaflet-compatible heatmap (filterable by cause and time_band)",
+    "GET /hotspots": "Returns DBSCAN cluster GeoJSON",
+    "GET /corridors/risk": "Returns ranked corridor risk table",
+    "GET /heatmap/point?lat=X&lon=Y": "Returns density score for a given coordinate (live KDE)"
+  }
+}

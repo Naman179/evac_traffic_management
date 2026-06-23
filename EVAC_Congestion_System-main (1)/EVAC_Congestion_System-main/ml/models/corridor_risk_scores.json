@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-06-23T11:26:06.776027",
+  "total_corridors_ranked": 22,
+  "min_events_threshold": 10,
+  "overall_baseline_closure_rate": 0.0827,
+  "non_corridor_event_fraction": 0.3846,
+  "corridors": [
+    {
+      "corridor": "mysore road",
+      "event_count": 743,
+      "closure_rate": 0.1104,
+      "mean_impact": 6.34,
+      "peak_hour": 6,
+      "risk_score": 0.7994,
+      "risk_tier": "HIGH",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "varthur road",
+      "event_count": 77,
+      "closure_rate": 0.1169,
+      "mean_impact": 6.43,
+      "peak_hour": 5,
+      "risk_score": 0.7903,
+      "risk_tier": "HIGH",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "cbd 1",
+      "event_count": 26,
+      "closure_rate": 0.1154,
+      "mean_impact": 6.38,
+      "peak_hour": 4,
+      "risk_score": 0.7768,
+      "risk_tier": "HIGH",
+      "dominant_cause": "pot_holes"
+    },
+    {
+      "corridor": "airport new south road",
+      "event_count": 67,
+      "closure_rate": 0.1045,
+      "mean_impact": 6.39,
+      "peak_hour": 19,
+      "risk_score": 0.7379,
+      "risk_tier": "HIGH",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "orr north 1",
+      "event_count": 275,
+      "closure_rate": 0.08,
+      "mean_impact": 6.27,
+      "peak_hour": 19,
+      "risk_score": 0.6455,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "old airport road",
+      "event_count": 76,
+      "closure_rate": 0.0789,
+      "mean_impact": 6.26,
+      "peak_hour": 5,
+      "risk_score": 0.6277,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "orr east 1",
+      "event_count": 244,
+      "closure_rate": 0.0738,
+      "mean_impact": 6.24,
+      "peak_hour": 21,
+      "risk_score": 0.6164,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "non-corridor",
+      "event_count": 3143,
+      "closure_rate": 0.1203,
+      "mean_impact": 2.52,
+      "peak_hour": 21,
+      "risk_score": 0.6,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "cbd 2",
+      "event_count": 104,
+      "closure_rate": 0.0673,
+      "mean_impact": 6.2,
+      "peak_hour": 19,
+      "risk_score": 0.5786,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "west of chord road",
+      "event_count": 174,
+      "closure_rate": 0.0632,
+      "mean_impact": 6.2,
+      "peak_hour": 5,
+      "risk_score": 0.5667,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "irr(thanisandra road)",
+      "event_count": 95,
+      "closure_rate": 0.0632,
+      "mean_impact": 6.2,
+      "peak_hour": 23,
+      "risk_score": 0.5619,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "pot_holes"
+    },
+    {
+      "corridor": "hennur main road",
+      "event_count": 96,
+      "closure_rate": 0.0625,
+      "mean_impact": 6.21,
+      "peak_hour": 4,
+      "risk_score": 0.5602,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "bellary road 1",
+      "event_count": 610,
+      "closure_rate": 0.0541,
+      "mean_impact": 6.17,
+      "peak_hour": 4,
+      "risk_score": 0.5566,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "hosur road",
+      "event_count": 298,
+      "closure_rate": 0.057,
+      "mean_impact": 6.17,
+      "peak_hour": 5,
+      "risk_score": 0.5488,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "old madras road",
+      "event_count": 263,
+      "closure_rate": 0.0456,
+      "mean_impact": 6.16,
+      "peak_hour": 19,
+      "risk_score": 0.5012,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "orr north 2",
+      "event_count": 235,
+      "closure_rate": 0.0426,
+      "mean_impact": 6.13,
+      "peak_hour": 5,
+      "risk_score": 0.4844,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "magadi road",
+      "event_count": 245,
+      "closure_rate": 0.0408,
+      "mean_impact": 6.13,
+      "peak_hour": 6,
+      "risk_score": 0.4791,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "bellary road 2",
+      "event_count": 379,
+      "closure_rate": 0.0317,
+      "mean_impact": 6.1,
+      "peak_hour": 20,
+      "risk_score": 0.449,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "bannerghata road",
+      "event_count": 209,
+      "closure_rate": 0.0335,
+      "mean_impact": 6.11,
+      "peak_hour": 22,
+      "risk_score": 0.4461,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "orr west 1",
+      "event_count": 168,
+      "closure_rate": 0.0298,
+      "mean_impact": 6.11,
+      "peak_hour": 21,
+      "risk_score": 0.4289,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "tumkur road",
+      "event_count": 458,
+      "closure_rate": 0.0262,
+      "mean_impact": 6.05,
+      "peak_hour": 21,
+      "risk_score": 0.428,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "vehicle_breakdown"
+    },
+    {
+      "corridor": "orr east 2",
+      "event_count": 187,
+      "closure_rate": 0.016,
+      "mean_impact": 6.05,
+      "peak_hour": 21,
+      "risk_score": 0.3714,
+      "risk_tier": "MEDIUM",
+      "dominant_cause": "construction"
+    }
+  ]
+}
