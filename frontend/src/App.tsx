@@ -27,18 +27,24 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="flex min-h-screen bg-surface-950 text-surface-100">
-          <Sidebar isCollapsed={isSidebarCollapsed} onToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)} />
-          <main className={`flex-1 p-8 transition-all duration-300 ${isSidebarCollapsed ? 'ml-20' : 'ml-64'}`}>
-            <div className="max-w-7xl mx-auto w-full">
+        <div style={{ display: 'flex', minHeight: '100vh', background: '#0b0f10' }}>
+          <Sidebar
+            isCollapsed={isSidebarCollapsed}
+            onToggle={() => setIsSidebarCollapsed(prev => !prev)}
+          />
+          <main
+            className={`main-content ${isSidebarCollapsed ? 'sidebar-closed' : 'sidebar-open'}`}
+            style={{ flex: 1, overflowX: 'hidden' }}
+          >
+            <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/predict" element={<PredictionPage />} />
-                <Route path="/heatmap" element={<HeatmapPage />} />
-                <Route path="/anomaly" element={<AnomalyPage />} />
-                <Route path="/route" element={<RoutePage />} />
+                <Route path="/"          element={<Dashboard />} />
+                <Route path="/predict"   element={<PredictionPage />} />
+                <Route path="/heatmap"   element={<HeatmapPage />} />
+                <Route path="/anomaly"   element={<AnomalyPage />} />
+                <Route path="/route"     element={<RoutePage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
-                <Route path="/monitoring" element={<MonitoringPage />} />
+                <Route path="/monitoring"element={<MonitoringPage />} />
               </Routes>
             </div>
           </main>
@@ -47,11 +53,15 @@ export default function App() {
           position="top-right"
           toastOptions={{
             style: {
-              background: '#151a1d',
-              color: '#f3f4f6',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
+              background: '#1b2024',
+              color: '#e5e7eb',
+              border: '1px solid rgba(46,204,113,0.2)',
               borderRadius: '12px',
               fontSize: '13px',
+              fontFamily: 'Inter, system-ui, sans-serif',
+            },
+            success: {
+              iconTheme: { primary: '#2ecc71', secondary: '#fff' },
             },
           }}
         />
