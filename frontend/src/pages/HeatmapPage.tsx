@@ -194,7 +194,7 @@ export default function HeatmapPage() {
                 onEachFeature={(feature, layer) => {
                   const p = feature.properties as HotspotFeature['properties'];
                   layer.bindPopup(
-                    `<div style="color:#1e293b">
+                    `<div style="color:#151a1d">
                       <b>Cluster #${p.cluster_id}</b><br/>
                       Risk: <b>${p.risk_level}</b><br/>
                       Events: ${p.event_count}<br/>

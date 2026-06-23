@@ -29,9 +29,9 @@ export function Spinner({ size = 20 }: { size?: number }) {
 export function PageLoader() {
   return (
     <div className="flex items-center justify-center h-64">
-      <div className="text-center">
+      <div className="text-center text-primary-500">
         <Spinner size={40} />
-        <p className="text-surface-700 text-sm mt-4">Loading data...</p>
+        <p className="text-surface-200 text-sm mt-4">Loading data...</p>
       </div>
     </div>
   );

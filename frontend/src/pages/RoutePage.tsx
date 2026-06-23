@@ -18,7 +18,7 @@ import 'leaflet/dist/leaflet.css';
 // Fix leaflet default icon
 const DefaultIcon = L.divIcon({
   className: '',
-  html: `<div style="width:16px;height:16px;border-radius:50%;background:#6366f1;border:2px solid white;box-shadow:0 0 6px rgba(99,102,241,0.5)"></div>`,
+  html: `<div style="width:16px;height:16px;border-radius:50%;background:#00c853;border:2px solid white;box-shadow:0 0 6px rgba(46,204,113,0.5)"></div>`,
   iconSize: [16, 16],
 });
 
@@ -285,20 +285,20 @@ export default function RoutePage() {
             />
             <Marker position={[form.latitude, form.longitude]} icon={DefaultIcon}>
               <Popup>
-                <span style={{ color: '#1e293b' }}>
+                <span style={{ color: '#151a1d' }}>
                   <b>Incident Start</b><br />{form.event_cause}
                 </span>
               </Popup>
             </Marker>
             {form.endlatitude && form.endlongitude && (
               <Marker position={[form.endlatitude, form.endlongitude]} icon={EndIcon}>
-                <Popup><span style={{ color: '#1e293b' }}>Incident End</span></Popup>
+                <Popup><span style={{ color: '#151a1d' }}>Incident End</span></Popup>
               </Marker>
             )}
             {routeCoords && routeCoords.length > 0 && (
               <Polyline
                 positions={routeCoords.map(([lat, lon]) => [lat, lon] as [number, number])}
-                color="#6366f1"
+                color="#00c853"
                 weight={4}
                 opacity={0.8}
                 dashArray="8 4"

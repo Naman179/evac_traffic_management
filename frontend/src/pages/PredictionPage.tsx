@@ -266,8 +266,8 @@ export default function PredictionPage() {
                     />
                     <Radar
                       dataKey="value"
-                      stroke="#6366f1"
-                      fill="#6366f1"
+                      stroke="#00c853"
+                      fill="#00c853"
                       fillOpacity={0.3}
                     />
                   </RadarChart>

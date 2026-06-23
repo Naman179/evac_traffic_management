@@ -132,8 +132,8 @@ export default function Dashboard() {
                 />
                 <Tooltip
                   contentStyle={{
-                    background: '#1e293b',
-                    border: '1px solid rgba(99,102,241,0.3)',
+                    background: '#151a1d',
+                    border: '1px solid rgba(46,204,113,0.3)',
                     borderRadius: 10,
                     fontSize: 12,
                   }}
@@ -145,7 +145,7 @@ export default function Dashboard() {
                       key={i}
                       fill={
                         RISK_COLORS[c.risk_tier as keyof typeof RISK_COLORS] ||
-                        '#6366f1'
+                        '#00c853'
                       }
                     />
                   ))}
@@ -182,8 +182,8 @@ export default function Dashboard() {
                 </Pie>
                 <Tooltip
                   contentStyle={{
-                    background: '#1e293b',
-                    border: '1px solid rgba(99,102,241,0.3)',
+                    background: '#151a1d',
+                    border: '1px solid rgba(46,204,113,0.3)',
                     borderRadius: 10,
                     fontSize: 12,
                   }}

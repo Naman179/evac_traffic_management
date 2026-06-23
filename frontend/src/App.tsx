@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
@@ -21,30 +22,34 @@ const queryClient = new QueryClient({
 });
 
 export default function App() {
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 ml-64 p-8">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/predict" element={<PredictionPage />} />
-              <Route path="/heatmap" element={<HeatmapPage />} />
-              <Route path="/anomaly" element={<AnomalyPage />} />
-              <Route path="/route" element={<RoutePage />} />
-              <Route path="/analytics" element={<AnalyticsPage />} />
-              <Route path="/monitoring" element={<MonitoringPage />} />
-            </Routes>
+        <div className="flex min-h-screen bg-surface-950 text-surface-100">
+          <Sidebar isCollapsed={isSidebarCollapsed} onToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)} />
+          <main className={`flex-1 p-8 transition-all duration-300 ${isSidebarCollapsed ? 'ml-20' : 'ml-64'}`}>
+            <div className="max-w-7xl mx-auto w-full">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/predict" element={<PredictionPage />} />
+                <Route path="/heatmap" element={<HeatmapPage />} />
+                <Route path="/anomaly" element={<AnomalyPage />} />
+                <Route path="/route" element={<RoutePage />} />
+                <Route path="/analytics" element={<AnalyticsPage />} />
+                <Route path="/monitoring" element={<MonitoringPage />} />
+              </Routes>
+            </div>
           </main>
         </div>
         <Toaster
           position="top-right"
           toastOptions={{
             style: {
-              background: '#1e293b',
-              color: '#f1f5f9',
-              border: '1px solid rgba(99, 102, 241, 0.2)',
+              background: '#151a1d',
+              color: '#f3f4f6',
+              border: '1px solid rgba(255, 255, 255, 0.05)',
               borderRadius: '12px',
               fontSize: '13px',
             },

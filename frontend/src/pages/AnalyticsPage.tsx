@@ -97,13 +97,13 @@ export default function AnalyticsPage() {
               />
               <Tooltip
                 contentStyle={{
-                  background: '#1e293b',
-                  border: '1px solid rgba(99,102,241,0.3)',
+                  background: '#151a1d',
+                  border: '1px solid rgba(46,204,113,0.3)',
                   borderRadius: 10,
                   fontSize: 12,
                 }}
               />
-              <Bar dataKey="value" fill="#6366f1" radius={[0, 6, 6, 0]} />
+              <Bar dataKey="value" fill="#00c853" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -116,13 +116,13 @@ export default function AnalyticsPage() {
           </h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={hourData}>
-              <CartesianGrid stroke="#1e293b" />
+              <CartesianGrid stroke="#151a1d" />
               <XAxis dataKey="hour" tick={{ fill: '#64748b', fontSize: 10 }} />
               <YAxis tick={{ fill: '#64748b', fontSize: 11 }} />
               <Tooltip
                 contentStyle={{
-                  background: '#1e293b',
-                  border: '1px solid rgba(99,102,241,0.3)',
+                  background: '#151a1d',
+                  border: '1px solid rgba(46,204,113,0.3)',
                   borderRadius: 10,
                   fontSize: 12,
                 }}
@@ -161,8 +161,8 @@ export default function AnalyticsPage() {
               <ZAxis type="number" dataKey="events" range={[50, 500]} />
               <Tooltip
                 contentStyle={{
-                  background: '#1e293b',
-                  border: '1px solid rgba(99,102,241,0.3)',
+                  background: '#151a1d',
+                  border: '1px solid rgba(46,204,113,0.3)',
                   borderRadius: 10,
                   fontSize: 12,
                 }}
@@ -175,7 +175,7 @@ export default function AnalyticsPage() {
                 {scatterData.map((entry, i) => (
                   <Cell
                     key={i}
-                    fill={TIER_COLORS[entry.tier] || '#6366f1'}
+                    fill={TIER_COLORS[entry.tier] || '#00c853'}
                   />
                 ))}
               </Scatter>
@@ -201,8 +201,8 @@ export default function AnalyticsPage() {
                 />
                 <Tooltip
                   contentStyle={{
-                    background: '#1e293b',
-                    border: '1px solid rgba(99,102,241,0.3)',
+                    background: '#151a1d',
+                    border: '1px solid rgba(46,204,113,0.3)',
                     borderRadius: 10,
                     fontSize: 12,
                   }}
@@ -235,8 +235,8 @@ export default function AnalyticsPage() {
             <YAxis tick={{ fill: '#64748b', fontSize: 11 }} />
             <Tooltip
               contentStyle={{
-                background: '#1e293b',
-                border: '1px solid rgba(99,102,241,0.3)',
+                background: '#151a1d',
+                border: '1px solid rgba(46,204,113,0.3)',
                 borderRadius: 10,
                 fontSize: 12,
               }}
@@ -247,7 +247,7 @@ export default function AnalyticsPage() {
                 .map((c, i) => (
                   <Cell
                     key={i}
-                    fill={TIER_COLORS[c.risk_tier] || '#6366f1'}
+                    fill={TIER_COLORS[c.risk_tier] || '#00c853'}
                   />
                 ))}
             </Bar>

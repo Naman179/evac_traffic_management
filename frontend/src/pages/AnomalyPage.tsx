@@ -198,8 +198,8 @@ export default function AnomalyPage() {
                 <YAxis tick={{ fill: '#64748b', fontSize: 11 }} />
                 <Tooltip
                   contentStyle={{
-                    background: '#1e293b',
-                    border: '1px solid rgba(99,102,241,0.3)',
+                    background: '#151a1d',
+                    border: '1px solid rgba(46,204,113,0.3)',
                     borderRadius: 10,
                     fontSize: 12,
                   }}
@@ -212,7 +212,7 @@ export default function AnomalyPage() {
                   {result.results.map((r, i) => (
                     <Cell
                       key={i}
-                      fill={r.is_anomaly ? '#ef4444' : '#6366f1'}
+                      fill={r.is_anomaly ? '#ef4444' : '#00c853'}
                     />
                   ))}
                 </Bar>

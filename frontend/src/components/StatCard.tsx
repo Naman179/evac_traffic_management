@@ -10,17 +10,17 @@ interface StatCardProps {
 }
 
 const colorMap = {
-  primary: 'from-primary-600/20 to-primary-500/5 border-primary-500/20',
-  accent: 'from-accent-600/20 to-accent-500/5 border-accent-500/20',
-  danger: 'from-danger-600/20 to-danger-500/5 border-danger-500/20',
-  warning: 'from-warning-600/20 to-warning-500/5 border-warning-500/20',
+  primary: 'from-primary-500/10 to-transparent border-primary-500/20',
+  accent: 'from-primary-400/10 to-transparent border-primary-400/20',
+  danger: 'from-danger-500/10 to-transparent border-danger-500/20',
+  warning: 'from-warning-500/10 to-transparent border-warning-500/20',
 };
 
 const iconColorMap = {
-  primary: 'text-primary-400',
-  accent: 'text-accent-400',
-  danger: 'text-danger-400',
-  warning: 'text-warning-400',
+  primary: 'text-primary-500',
+  accent: 'text-primary-400',
+  danger: 'text-danger-500',
+  warning: 'text-warning-500',
 };
 
 export default function StatCard({
@@ -36,12 +36,12 @@ export default function StatCard({
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs text-surface-700 uppercase tracking-wider font-medium">
+          <p className="text-xs text-surface-200 uppercase tracking-wider font-medium">
             {title}
           </p>
-          <p className="text-2xl font-bold mt-1.5 text-surface-100">{value}</p>
+          <p className="text-3xl font-bold mt-2 text-white">{value}</p>
           {subtitle && (
-            <p className="text-xs text-surface-700 mt-1">{subtitle}</p>
+            <p className="text-xs text-surface-700 mt-1.5">{subtitle}</p>
           )}
         </div>
         <div
