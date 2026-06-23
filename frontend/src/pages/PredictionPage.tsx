@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { api, type PredictRequest } from '../api/client';
 import { Spinner } from '../components/Loading';
 import {
-  Crosshair, Send, Shield, Clock, AlertTriangle, TrendingUp,
+  Crosshair, Send, Shield, Clock, AlertTriangle, TrendingUp, BarChart2,
 } from 'lucide-react';
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, Cell,
 } from 'recharts';
 import toast from 'react-hot-toast';
 
@@ -35,10 +36,16 @@ export default function PredictionPage() {
     cause: 'accident',
     corridor: 'Mysore Road',
     zone: '',
+    veh_type: '',
     start_datetime: new Date().toISOString().slice(0, 16),
     lat: 12.95,
     lon: 77.55,
     is_planned: false,
+  });
+
+  const { data: featureImportance } = useQuery({
+    queryKey: ['feature-importance'],
+    queryFn: () => api.getFeatureImportance(),
   });
 
   const mutation = useMutation({
@@ -109,6 +116,19 @@ export default function PredictionPage() {
                 </select>
               </div>
             </div>
+
+            {form.cause === 'vehicle_breakdown' && (
+              <div>
+                <label className="form-label">Vehicle Type</label>
+                <select className="input-field" value={form.veh_type} onChange={e => setForm({ ...form, veh_type: e.target.value })}>
+                  <option value="">Select vehicle type...</option>
+                  <option value="Two Wheeler">Two Wheeler</option>
+                  <option value="Three Wheeler">Three Wheeler</option>
+                  <option value="Four Wheeler">Four Wheeler</option>
+                  <option value="Heavy Vehicle">Heavy Vehicle</option>
+                </select>
+              </div>
+            )}
 
             <div>
               <label className="form-label">Date & Time</label>
@@ -215,15 +235,42 @@ export default function PredictionPage() {
               </div>
 
               {/* Radar */}
-              <div className="animate-fade-in" style={card}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Impact Profile</div>
-                <ResponsiveContainer width="100%" height={240}>
-                  <RadarChart data={radarData}>
-                    <PolarGrid stroke="rgba(255,255,255,0.06)" />
-                    <PolarAngleAxis dataKey="metric" tick={{ fill: '#9ca3af', fontSize: 11, fontWeight: 600 }} />
-                    <Radar dataKey="value" stroke="#2ecc71" fill="#2ecc71" fillOpacity={0.2} strokeWidth={2} />
-                  </RadarChart>
-                </ResponsiveContainer>
+              <div className="animate-fade-in" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div style={card}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Impact Profile</div>
+                  <ResponsiveContainer width="100%" height={240}>
+                    <RadarChart data={radarData}>
+                      <PolarGrid stroke="rgba(255,255,255,0.06)" />
+                      <PolarAngleAxis dataKey="metric" tick={{ fill: '#9ca3af', fontSize: 11, fontWeight: 600 }} />
+                      <Radar dataKey="value" stroke="#2ecc71" fill="#2ecc71" fillOpacity={0.2} strokeWidth={2} />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+                
+                {/* Feature Importance */}
+                <div style={card}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <BarChart2 size={14} /> Model Feature Importance
+                  </div>
+                  {featureImportance ? (
+                    <ResponsiveContainer width="100%" height={240}>
+                      <BarChart data={Object.entries(featureImportance.features).slice(0, 5).map(([k, v]) => ({ name: k.replace('_cat', ''), value: v }))} layout="vertical" margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                        <XAxis type="number" hide />
+                        <YAxis dataKey="name" type="category" width={80} tick={{ fill: '#9ca3af', fontSize: 10 }} axisLine={false} tickLine={false} />
+                        <RechartsTooltip contentStyle={{ background: '#111417', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '12px' }} />
+                        <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                          {Object.entries(featureImportance.features).slice(0, 5).map((_, i) => (
+                            <Cell key={i} fill="#60a5fa" opacity={0.8} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div style={{ height: '240px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Spinner size={24} />
+                    </div>
+                  )}
+                </div>
               </div>
             </>
           ) : (
