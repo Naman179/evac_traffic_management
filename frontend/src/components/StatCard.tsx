@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 
 interface StatCardProps {
   title: string;
@@ -7,6 +7,7 @@ interface StatCardProps {
   icon: ReactNode;
   trend?: 'up' | 'down' | 'neutral';
   color?: 'primary' | 'accent' | 'danger' | 'warning';
+  description?: string;
   onClick?: () => void;
 }
 
@@ -37,8 +38,9 @@ const colorConfig = {
   },
 };
 
-export default function StatCard({ title, value, subtitle, icon, color = 'primary', onClick }: StatCardProps) {
+export default function StatCard({ title, value, subtitle, icon, color = 'primary', description, onClick }: StatCardProps) {
   const cfg = colorConfig[color];
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
@@ -55,12 +57,14 @@ export default function StatCard({ title, value, subtitle, icon, color = 'primar
       }}
       className="animate-fade-in stat-card-hover"
       onMouseEnter={e => {
+        setIsHovered(true);
         const el = e.currentTarget as HTMLElement;
         el.style.transform = 'translateY(-4px)';
         el.style.borderColor = cfg.borderGlow;
         el.style.boxShadow = `0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px ${cfg.borderGlow}`;
       }}
       onMouseLeave={e => {
+        setIsHovered(false);
         const el = e.currentTarget as HTMLElement;
         el.style.transform = 'translateY(0)';
         el.style.borderColor = 'rgba(255,255,255,0.06)';
@@ -98,6 +102,25 @@ export default function StatCard({ title, value, subtitle, icon, color = 'primar
           {icon}
         </div>
       </div>
+
+      {/* Tooltip Overlay */}
+      {description && isHovered && (
+        <div style={{
+          position: 'absolute',
+          bottom: '0', left: '0', right: '0',
+          padding: '12px 16px',
+          background: 'rgba(17,20,23,0.95)',
+          backdropFilter: 'blur(4px)',
+          borderTop: `1px solid ${cfg.borderGlow}`,
+          fontSize: '12px',
+          color: '#d1d5db',
+          lineHeight: 1.5,
+          animation: 'fadeIn 0.2s ease-out',
+          zIndex: 10,
+        }}>
+          {description}
+        </div>
+      )}
     </div>
   );
 }
